@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
@@ -12,12 +12,14 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+	const [didScroll, setDidScroll] = useState(false);
+
 	return (
 		<Theme>
 			<AppContainer>
-				<Header />
+				<Header setDidScroll={setDidScroll} />
 				<Sidebar />
-				<Main />
+				<Main didScroll={didScroll} />
 				<Footer />
 			</AppContainer>
 		</Theme>
