@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import MockupImg from '../assets/mockup-image.png';
+import { motion } from 'framer-motion';
+import { ArrowheadDown } from '@styled-icons/evaicons-solid';
 
 const Container = styled.section`
 	padding: 200px 150px;
@@ -48,15 +48,51 @@ const SubTitle = styled(Title)`
 
 const Description = styled(Title)`
 	padding-top: 2em;
-	width: 650px;
+	width: 690px;
 	font-size: 25px;
 	margin: 0;
 	color: white;
+	word-spacing: 2px;
+	line-height: 45px;
 `;
 
 const HeroImg = styled.img`
 	width: 600px;
 `;
+
+const ScrollDown = styled.div`
+	position: absolute;
+	bottom: 8px;
+	left: 47%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	color: white;
+	color: palevioletred;
+	font-size: 18px;
+	font-family: 'Asap', sans-serif;
+	svg {
+		width: 40px;
+	}
+`;
+
+const ScrollDownContainer = styled(motion.div)`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+`;
+
+const bounceTransition = {
+	y: {
+		duration: 0.5,
+		yoyo: Infinity,
+		ease: 'easeOut',
+	},
+};
 
 const Hero = () => {
 	return (
@@ -71,11 +107,18 @@ const Hero = () => {
 						I'm a <span>Frontend Web Engineer</span> building cool stuff.
 					</SubTitle>
 					<Description>
-						I'm a software engineer based in Boston, MA specializing in building (and occasionally designing)
-						exceptional websites, applications, and everything in between.
+						{
+							"I'm a frontend software engineer. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like to build ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
+						}
 					</Description>
 				</Intro>
 			</Content>
+			<ScrollDown>
+				<ScrollDownContainer transition={bounceTransition} animate={{ y: ['0%', '-50%'] }}>
+					Scroll Down
+					<ArrowheadDown />
+				</ScrollDownContainer>
+			</ScrollDown>
 		</Container>
 	);
 };
