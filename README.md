@@ -4,7 +4,7 @@
 
 > #### Hero of the Page
 
-Hi, my name is Achiaga. This is my portfolio for a frontend developer. **_Javascript & Reactjs_**
+Hi, my name is Achiaga. This is my portfolio for a frontend developer. **_Reactjs & CSS_**
 
 <br/>
 
