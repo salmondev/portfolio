@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { ArrowheadDown } from '@styled-icons/evaicons-solid';
 
-const Container = styled.section`
+const Container = styled(motion.section)`
 	padding: 200px 150px;
 	margin: 0px auto;
 	max-width: 1600px;
@@ -19,7 +19,7 @@ const Content = styled.div`
 
 const Intro = styled.div``;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
 	margin: 0;
 	margin: 1rem 0;
 	margin-top: 0em;
@@ -90,19 +90,22 @@ const bounceTransition = {
 	},
 };
 
-const fadeTransition = {};
-
 const Hero = ({ didScroll }) => {
 	const variants = {
 		scroll: { opacity: 0 },
 		noScroll: { y: ['0%', '-50%'] },
 	};
+
 	return (
 		<Container>
 			<Content>
 				<Intro>
 					<FirstTitle>My name is,</FirstTitle>
-					<Title>
+					<Title
+						drag
+						dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+						dragTransition={{ bounceStiffness: 500, bounceDamping: 10 }}
+						onDragEnd={(event, info) => console.log('stop messing with my page')}>
 						Alfonso <span> Achiaga</span>
 					</Title>
 					<SubTitle>
