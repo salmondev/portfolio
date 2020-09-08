@@ -35,8 +35,13 @@ const SideText = styled.div`
 
 const SideIcon = styled.div`
 	padding: 0.5em 0;
+	a {
+		color: white;
+		text-decoration: none;
+	}
 	svg {
 		width: 30px;
+		cursor: pointer;
 	}
 `;
 
@@ -50,17 +55,26 @@ const Line = styled.div`
 `;
 
 const Sidebar = () => {
+	const handleClipboardClick = () => {
+		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
+		return;
+	};
+
 	return (
 		<>
 			<LeftSideContainer>
 				<SideIcon>
-					<Github />
+					<a href='https://github.com/Achiaga' target='_blank'>
+						<Github />
+					</a>
 				</SideIcon>
 				<SideIcon>
-					<Email />
+					<Email onClick={handleClipboardClick} />
 				</SideIcon>
 				<SideIcon>
-					<LinkedinSquare />
+					<a href='https://www.linkedin.com/in/alfonso-diez-achiaga/' target='_blank'>
+						<LinkedinSquare />
+					</a>
 				</SideIcon>
 				<Line />
 			</LeftSideContainer>

@@ -56,10 +56,6 @@ const Description = styled(Title)`
 	line-height: 45px;
 `;
 
-const HeroImg = styled.img`
-	width: 600px;
-`;
-
 const ScrollDown = styled.div`
 	position: absolute;
 	bottom: 8px;
@@ -71,15 +67,15 @@ const ScrollDown = styled.div`
 	width: 100px;
 	color: white;
 	color: palevioletred;
-	font-size: 18px;
+	font-size: 16px;
 	font-family: 'Asap', sans-serif;
 	svg {
-		width: 40px;
+		width: 30px;
 	}
 `;
 
 const ScrollDownContainer = styled(motion.div)`
-	display: flex;
+	display: ${(props) => (props.didScroll ? 'flex' : 'flex')};
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -94,7 +90,13 @@ const bounceTransition = {
 	},
 };
 
-const Hero = () => {
+const fadeTransition = {};
+
+const Hero = ({ didScroll }) => {
+	const variants = {
+		scroll: { opacity: 0 },
+		noScroll: { y: ['0%', '-50%'] },
+	};
 	return (
 		<Container>
 			<Content>
@@ -114,7 +116,11 @@ const Hero = () => {
 				</Intro>
 			</Content>
 			<ScrollDown>
-				<ScrollDownContainer transition={bounceTransition} animate={{ y: ['0%', '-50%'] }}>
+				<ScrollDownContainer
+					didScroll={didScroll}
+					transition={bounceTransition}
+					variants={variants}
+					animate={didScroll ? 'scroll' : 'noScroll'}>
 					Scroll Down
 					<ArrowheadDown />
 				</ScrollDownContainer>
