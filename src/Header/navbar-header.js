@@ -54,14 +54,14 @@ const HeaderLine = styled.div`
 `;
 
 const NavbarHeader = ({ setDidScroll }) => {
-	const [scrollProgress, setScrollProgress] = useState('0');
+	const [scrollProgress, setScrollProgress] = useState('20%');
 
 	const listenToScrollEvent = () => {
 		document.addEventListener('scroll', () => {
 			const scrollPx = document.documentElement.scrollTop;
 			const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 			let scrolled = (scrollPx / winHeightPx) * 100;
-			scrolled = Math.round(scrolled);
+			scrolled = Math.round(scrolled + 20);
 			scrolled = `${scrolled}%`;
 			setDidScroll(true);
 			setScrollProgress(scrolled);
@@ -72,10 +72,14 @@ const NavbarHeader = ({ setDidScroll }) => {
 		listenToScrollEvent();
 	}, []);
 
+	const handleClick = () => {
+		console.log('click');
+	};
+
 	return (
 		<HeaderContainer>
 			<Header scroll={scrollProgress}>
-				<HeaderTextContainer>
+				<HeaderTextContainer onClick={handleClick}>
 					<HeaderText>About</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />

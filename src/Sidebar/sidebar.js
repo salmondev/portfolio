@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
@@ -54,9 +54,10 @@ const Line = styled.div`
 	background-color: white;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ handleToast }) => {
 	const handleClipboardClick = () => {
 		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
+		handleToast('Copy to clipboard! ✅');
 		return;
 	};
 
