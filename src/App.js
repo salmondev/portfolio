@@ -4,6 +4,7 @@ import Theme from './Theme';
 import Header from './Header/navbar-header';
 import Sidebar from './Sidebar/sidebar';
 import Main from './Main/main';
+import Notification from './Notification/notification';
 import Footer from './Footer/footer';
 
 const AppContainer = styled.div`
@@ -13,13 +14,22 @@ const AppContainer = styled.div`
 
 function App() {
 	const [didScroll, setDidScroll] = useState(false);
+	const [toast, setToast] = useState([]);
+
+	const handleToast = (msg) => {
+		setToast((oldVal) => [...oldVal, msg]);
+		setTimeout(() => {
+			setToast((oldState) => oldState.splice(1, 1));
+		}, 3000);
+	};
 
 	return (
 		<Theme>
 			<AppContainer>
 				<Header setDidScroll={setDidScroll} />
-				<Sidebar />
-				<Main didScroll={didScroll} />
+				<Sidebar handleToast={handleToast} />
+				<Notification toast={toast} />
+				<Main handleToast={handleToast} didScroll={didScroll} />
 				<Footer />
 			</AppContainer>
 		</Theme>

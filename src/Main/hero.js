@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { ArrowheadDown } from '@styled-icons/evaicons-solid';
 
-const Container = styled.section`
+const Container = styled(motion.section)`
 	padding: 200px 150px;
 	margin: 0px auto;
 	max-width: 1600px;
-	min-height: 100vh;
+	min-height: 400vh;
 `;
 
 const Content = styled.div`
@@ -19,7 +19,7 @@ const Content = styled.div`
 
 const Intro = styled.div``;
 
-const Title = styled.h1`
+const Title = styled(motion.h1)`
 	margin: 0;
 	margin: 1rem 0;
 	margin-top: 0em;
@@ -87,28 +87,48 @@ const bounceTransition = {
 		duration: 0.5,
 		yoyo: Infinity,
 		ease: 'easeOut',
+		delay: 3.5,
 	},
 };
 
-const fadeTransition = {};
+const Hero = ({ didScroll, handleToast }) => {
+	const [count, setCount] = useState(0);
 
-const Hero = ({ didScroll }) => {
 	const variants = {
 		scroll: { opacity: 0 },
 		noScroll: { y: ['0%', '-50%'] },
 	};
+
+	const handleDrag = () => {
+		let newCount = count + 1;
+		setCount(newCount);
+		console.log(count);
+		if (count > 2) handleToast('Stop breaking my website! ⛔️ 😉');
+		return;
+	};
+
 	return (
 		<Container>
 			<Content>
 				<Intro>
 					<FirstTitle>My name is,</FirstTitle>
-					<Title>
+					<Title
+						drag
+						dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
+						dragTransition={{ bounceStiffness: 500, bounceDamping: 7 }}
+						onDragEnd={handleDrag}
+						initial={{ y: -300, opacity: 0 }}
+						animate={{ y: 0, opacity: 1 }}
+						transition={{ duration: 1 }}>
 						Alfonso <span> Achiaga</span>
 					</Title>
-					<SubTitle>
+					<SubTitle
+						initial={{ x: -300, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						transition={{ duration: 1 }}>
 						I'm a <span>Frontend Web Engineer</span> building cool stuff.
 					</SubTitle>
-					<Description>
+					<Description initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
 						{
 							"I'm a frontend software engineer. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like to build ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
 						}
@@ -118,8 +138,8 @@ const Hero = ({ didScroll }) => {
 			<ScrollDown>
 				<ScrollDownContainer
 					didScroll={didScroll}
-					transition={bounceTransition}
 					variants={variants}
+					transition={bounceTransition}
 					animate={didScroll ? 'scroll' : 'noScroll'}>
 					Scroll Down
 					<ArrowheadDown />

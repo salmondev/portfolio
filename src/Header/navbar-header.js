@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const HeaderContainer = styled.div`
 	position: fixed;
@@ -23,7 +24,7 @@ const Header = styled.div`
 	-webkit-background-clip: text;
 `;
 
-const HeaderTextContainer = styled.div`
+const HeaderTextContainer = styled(motion.div)`
 	width: 95px;
 	min-width: 95px;
 	height: 45px;
@@ -35,7 +36,7 @@ const HeaderTextContainer = styled.div`
 	cursor: pointer;
 `;
 
-const HeaderText = styled.h4`
+const HeaderText = styled(motion.h4)`
 	font-size: 20px;
 	margin: 0;
 	padding: 0;
@@ -53,14 +54,14 @@ const HeaderLine = styled.div`
 `;
 
 const NavbarHeader = ({ setDidScroll }) => {
-	const [scrollProgress, setScrollProgress] = useState('0');
+	const [scrollProgress, setScrollProgress] = useState('20%');
 
 	const listenToScrollEvent = () => {
 		document.addEventListener('scroll', () => {
 			const scrollPx = document.documentElement.scrollTop;
 			const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 			let scrolled = (scrollPx / winHeightPx) * 100;
-			scrolled = Math.round(scrolled);
+			scrolled = Math.round(scrolled + 20);
 			scrolled = `${scrolled}%`;
 			setDidScroll(true);
 			setScrollProgress(scrolled);
@@ -71,10 +72,14 @@ const NavbarHeader = ({ setDidScroll }) => {
 		listenToScrollEvent();
 	}, []);
 
+	const handleClick = () => {
+		console.log('click');
+	};
+
 	return (
 		<HeaderContainer>
 			<Header scroll={scrollProgress}>
-				<HeaderTextContainer>
+				<HeaderTextContainer onClick={handleClick}>
 					<HeaderText>About</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
 import { Email } from '@styled-icons/material-twotone';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos';
@@ -33,7 +33,7 @@ const SideText = styled.div`
 	padding: 10px;
 `;
 
-const SideIcon = styled.div`
+const SideIcon = styled(motion.div)`
 	padding: 0.5em 0;
 	a {
 		color: white;
@@ -54,24 +54,25 @@ const Line = styled.div`
 	background-color: white;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ handleToast }) => {
 	const handleClipboardClick = () => {
 		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
+		handleToast('Copy to clipboard! ✅');
 		return;
 	};
 
 	return (
 		<>
 			<LeftSideContainer>
-				<SideIcon>
+				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
 					<a href='https://github.com/Achiaga' target='_blank'>
 						<Github />
 					</a>
 				</SideIcon>
-				<SideIcon>
+				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
 					<Email onClick={handleClipboardClick} />
 				</SideIcon>
-				<SideIcon>
+				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
 					<a href='https://www.linkedin.com/in/alfonso-diez-achiaga/' target='_blank'>
 						<LinkedinSquare />
 					</a>
