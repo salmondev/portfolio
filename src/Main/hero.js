@@ -103,7 +103,7 @@ const Hero = ({ didScroll, handleToast }) => {
 		let newCount = count + 1;
 		setCount(newCount);
 		console.log(count);
-		if (count > 4) handleToast('Stop breaking my website! ⛔️ 😉');
+		if (count > 2) handleToast('Stop breaking my website! ⛔️ 😉');
 		return;
 	};
 

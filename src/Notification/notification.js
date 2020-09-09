@@ -26,10 +26,9 @@ function Notification({ toast }) {
 			{toast.map((popup) => (
 				<AnimatePresence>
 					<motion.div
-						initial={{ opacity: 0, y: 100 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.5 }}
-						exit={{ opacity: 0, y: -100 }}>
+						initial={{ opacity: 0, y: 50, scale: 0.3 }}
+						animate={{ opacity: 1, y: 0, scale: 1 }}
+						exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}>
 						<Toast>{popup}</Toast>
 					</motion.div>
 				</AnimatePresence>
