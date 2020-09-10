@@ -4,10 +4,12 @@ import { motion } from 'framer-motion';
 import { ArrowheadDown } from '@styled-icons/evaicons-solid';
 
 const Container = styled(motion.section)`
-	padding: 200px 150px;
+	padding-top: 200px;
+	padding-bottom: 50px;
+	padding-left: 170px;
 	margin: 0px auto;
-	max-width: 1600px;
-	min-height: 400vh;
+	/* max-width: 1600px; */
+	min-height: 75vh;
 `;
 
 const Content = styled.div`
@@ -130,7 +132,7 @@ const Hero = ({ didScroll, handleToast }) => {
 					</SubTitle>
 					<Description initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
 						{
-							"I'm a frontend software engineer. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like to build ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
+							"I'm a self-taught frontend software engineer. I'm 22 years old. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like to build ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
 						}
 					</Description>
 				</Intro>

@@ -17,7 +17,7 @@ const Header = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 40%;
+	width: 50%;
 	background: #1f1f1f;
 	background: linear-gradient(to right, palevioletred ${(props) => props.scroll}, white 0);
 	color: transparent;
@@ -25,8 +25,7 @@ const Header = styled.div`
 `;
 
 const HeaderTextContainer = styled(motion.div)`
-	width: 95px;
-	min-width: 95px;
+	padding: 0 10px;
 	height: 45px;
 	border-radius: 30px;
 	display: flex;
@@ -37,7 +36,7 @@ const HeaderTextContainer = styled(motion.div)`
 `;
 
 const HeaderText = styled(motion.h4)`
-	font-size: 20px;
+	font-size: 18px;
 	margin: 0;
 	padding: 0;
 	color: transparent;
@@ -47,7 +46,7 @@ const HeaderLine = styled.div`
 	content: '';
 	display: block;
 	height: 2px;
-	width: 100%;
+	min-width: 6%;
 	margin: 0px auto;
 	color: transparent;
 	background-color: white;
@@ -84,7 +83,11 @@ const NavbarHeader = ({ setDidScroll }) => {
 				</HeaderTextContainer>
 				<HeaderLine />
 				<HeaderTextContainer>
-					<HeaderText>Work</HeaderText>
+					<HeaderText>Experience</HeaderText>
+				</HeaderTextContainer>
+				<HeaderLine />
+				<HeaderTextContainer>
+					<HeaderText>Skills</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
 				<HeaderTextContainer>
