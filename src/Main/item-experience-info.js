@@ -1,18 +1,56 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { dataExperience } from './data';
 
-const Title = styled.div``;
+const ExperienceInfo = styled(motion.div)`
+	width: 50%;
+	border: 2px solid palevioletred;
+	background: #191919;
+	border-radius: 8px;
+	padding: 1em;
+	height: 292px;
+`;
 
-const TitleText = styled.h4``;
+const Title = styled.div`
+	padding: 0 0.2em;
+	padding-bottom: 20px;
+`;
 
-const ItemExperienceInfo = () => {
+const TitleText = styled.h4`
+	font-family: 'Calibre', sans-serif;
+	font-size: 22px;
+	margin: 0;
+	padding: 0.2em 0;
+`;
+
+const DateText = styled.span`
+	font-family: 'Roboto', sans-serif;
+`;
+
+const Body = styled.div``;
+
+const ListInfo = styled.ul``;
+
+const Info = styled.li`
+	padding-bottom: 30px;
+`;
+
+const ItemExperienceInfo = ({ selected }) => {
 	return (
-		<>
+		<ExperienceInfo>
 			<Title>
-				<TitleText>Title company</TitleText>
+				<TitleText>{dataExperience.info[selected].title}</TitleText>
+				<DateText>{dataExperience.info[selected].date}</DateText>
 			</Title>
-		</>
+			<Body>
+				<ListInfo>
+					<Info>{dataExperience.info[selected].first}</Info>
+					<Info>{dataExperience.info[selected].second}</Info>
+					<Info>{dataExperience.info[selected].third}</Info>
+				</ListInfo>
+			</Body>
+		</ExperienceInfo>
 	);
 };
 

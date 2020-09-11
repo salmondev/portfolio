@@ -5,12 +5,15 @@ import { motion } from 'framer-motion';
 const HeaderContainer = styled.div`
 	position: fixed;
 	left: 0;
-	top: 3%;
+	top: 0;
 	width: 100%;
+	padding: 1em 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-family: 'Asap', sans-serif;
+	background: #1e1e1e;
+	z-index: 9999;
 `;
 
 const Header = styled.div`

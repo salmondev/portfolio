@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { RightArrow } from '@styled-icons/boxicons-regular/';
-import { data } from './data-work';
+import { dataExperience } from './data';
 
 const Item = styled(motion.li)`
 	cursor: pointer;
@@ -26,8 +26,6 @@ const Item = styled(motion.li)`
 	}
 `;
 
-const IconList = styled.div``;
-
 const BackgroundTitle = styled(motion.div)`
 	width: 305px;
 	height: 100%;
@@ -43,7 +41,7 @@ const ItemExperienceList = ({ item, index, handleClick, selected }) => {
 		<Item animate key={index} index={index} selected={selected} onClick={() => handleClick(index)}>
 			{index === selected && <BackgroundTitle layoutId='underline' />}
 			<RightArrow />
-			<motion.span whileTap={{ scale: 0.95 }}>{data.experience[item].main}</motion.span>
+			<motion.span whileTap={{ scale: 0.95 }}>{dataExperience.list[item].main}</motion.span>
 		</Item>
 	);
 };

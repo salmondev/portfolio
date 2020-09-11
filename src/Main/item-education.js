@@ -3,29 +3,41 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { MinusOutline } from '@styled-icons/evaicons-outline/';
 import { RightArrow } from '@styled-icons/boxicons-regular/';
-import { data } from './data-work';
+import { dataEducation } from './data';
 
 const SubItemContainer = styled.div`
+	padding-left: 10px;
+	height: 50px;
+	padding-bottom: 5px;
+`;
+
+const ExpandContainer = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding-left: 35px;
+	justify-content: flex-start;
 	height: 20px;
-	padding-bottom: 1em;
+`;
+
+const DetailsContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	height: 20px;
+	padding: 5px 0px;
 `;
 
 const SubItem = styled.span`
 	margin: 0;
 	padding: 0;
 	font-size: 15px;
-	font-family: 'Asap', sans-serif;
+	font-family: 'Roboto', sans-serif;
 `;
 
 const SubItemIcon = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 10px;
+	padding: 0 2px;
 	height: 22px;
 	color: #ffffff8c;
 	svg {
@@ -44,15 +56,16 @@ const IconList = styled.div`
 const SubEducationItems = ({ item }) => {
 	return (
 		<SubItemContainer>
-			<SubItem>{data.education[item].expand}</SubItem>
-			<SubItemIcon>
-				<MinusOutline />
-			</SubItemIcon>
-			<SubItem>{data.education[item].date}</SubItem>
-			<SubItemIcon>
-				<MinusOutline />
-			</SubItemIcon>
-			<SubItem>{data.education[item].country}</SubItem>
+			<ExpandContainer>
+				<SubItem>{dataEducation[item].expand}</SubItem>
+			</ExpandContainer>
+			<DetailsContainer>
+				<SubItem>{dataEducation[item].date}</SubItem>
+				<SubItemIcon>
+					<MinusOutline />
+				</SubItemIcon>
+				<SubItem>{dataEducation[item].country}</SubItem>
+			</DetailsContainer>
 		</SubItemContainer>
 	);
 };
@@ -73,7 +86,7 @@ const ItemEducationList = ({ item, index }) => {
 					<RightArrow />
 				</IconList>
 				<div>
-					{data.education[item].main}
+					{dataEducation[item].main}
 					{expand ? <SubEducationItems item={item} /> : null}
 				</div>
 			</div>

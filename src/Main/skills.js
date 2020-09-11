@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { RightArrow } from '@styled-icons/boxicons-regular/';
-import { data } from './data-work';
+import { dataEducation } from './data';
 import ItemEducationList from './item-education';
+import ListSkills from './list-skills';
 
 const Container = styled(motion.section)`
 	padding-top: 150px;
-	padding-bottom: 150px;
+	padding-bottom: 100px;
 	padding-left: 170px;
 	padding-right: 170px;
 	margin: 0px auto;
@@ -42,22 +43,22 @@ const Line = styled.div`
 	/* margin: 0px auto; */
 `;
 
-const ListContainer = styled(motion.div)`
+const EducationBox = styled(motion.div)`
 	width: 100%;
 	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	height: 355px;
+`;
+
+const ListContainer = styled.div`
+	width: 35%;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: baseline;
-	padding-left: 4em;
-`;
-
-const List = styled.div``;
-
-const TitleList = styled.h1`
-	font-size: 28px;
-	color: palevioletred;
-	width: fit-content;
+	height: 355px;
 `;
 
 const BodyList = styled.ul`
@@ -67,31 +68,32 @@ const BodyList = styled.ul`
 	font-family: 'Titillium Web';
 	li {
 		cursor: pointer;
-		line-height: 50px;
+		line-height: 65px;
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
 	}
 `;
 
-const Education = ({}) => {
+const Skills = ({}) => {
 	return (
 		<Container>
 			<Title>
 				<TitleText>Skills</TitleText>
 				<Line />
 			</Title>
-			<ListContainer>
-				<List>
+			<EducationBox>
+				<ListSkills />
+				<ListContainer>
 					<BodyList>
-						{Object.keys(data.education).map((item, key) => {
+						{Object.keys(dataEducation).map((item, key) => {
 							return <ItemEducationList item={item} index={key} key={key} />;
 						})}
 					</BodyList>
-				</List>
-			</ListContainer>
+				</ListContainer>
+			</EducationBox>
 		</Container>
 	);
 };
 
-export default Education;
+export default Skills;

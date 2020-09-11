@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { motion, AnimateSharedLayout } from 'framer-motion';
-import { data } from './data-work';
 import ItemExperienceList from './item-experience-list';
 import ItemExperienceInfo from './item-experience-info';
+import { dataExperience } from './data';
 
 const Container = styled(motion.section)`
 	padding-top: 150px;
@@ -47,16 +47,12 @@ const ListContainer = styled(motion.div)`
 	width: 100%;
 	color: white;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 `;
 
-const ExperienceInfo = styled(motion.div)`
-	width: 50%;
-`;
-
 const List = styled(motion.div)`
-	width: 50%;
+	width: 40%;
 `;
 
 const BodyList = styled.ul`
@@ -84,7 +80,7 @@ const Experience = ({}) => {
 				<List>
 					<AnimateSharedLayout>
 						<BodyList>
-							{Object.keys(data.experience).map((item, index) => {
+							{Object.keys(dataExperience.list).map((item, index) => {
 								return (
 									<ItemExperienceList
 										key={index}
@@ -98,9 +94,9 @@ const Experience = ({}) => {
 						</BodyList>
 					</AnimateSharedLayout>
 				</List>
-				<ExperienceInfo>
-					<ItemExperienceInfo />
-				</ExperienceInfo>
+				<AnimateSharedLayout>
+					<ItemExperienceInfo selected={selected} />
+				</AnimateSharedLayout>
 			</ListContainer>
 		</Container>
 	);
