@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
 import { Email } from '@styled-icons/material-twotone';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos';
+import { MessageSquareCheck } from '@styled-icons/boxicons-regular';
 
 const SideContainer = styled.div`
 	width: 40px;
@@ -54,10 +55,14 @@ const Line = styled.div`
 	background-color: white;
 `;
 
+const CheckIcon = () => {
+	return <MessageSquareCheck />;
+};
+
 const Sidebar = ({ handleToast }) => {
 	const handleClipboardClick = () => {
 		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
-		handleToast('Copy to clipboard! ✅');
+		handleToast(`Copy to clipboard! 🥳`);
 		return;
 	};
 
