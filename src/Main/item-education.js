@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { MinusOutline } from '@styled-icons/evaicons-outline/';
 import { RightArrow } from '@styled-icons/boxicons-regular/';
 import { dataEducation } from './data';
 
-const SubItemContainer = styled.div`
+const SubItemContainer = styled(motion.div)`
 	padding-left: 10px;
 	height: 50px;
 	padding-bottom: 5px;
@@ -45,7 +45,8 @@ const SubItemIcon = styled.div`
 	}
 `;
 
-const IconList = styled.div`
+const IconList = styled(motion.div)`
+	position: absolute;
 	svg {
 		width: 15px;
 		color: palevioletred;
@@ -55,7 +56,15 @@ const IconList = styled.div`
 
 const SubEducationItems = ({ item }) => {
 	return (
-		<SubItemContainer>
+		<SubItemContainer
+			initial='collapsed'
+			animate='open'
+			exit='collapsed'
+			variants={{
+				open: { opacity: 1, height: '50px' },
+				collapsed: { opacity: 0, height: '0px' },
+			}}
+			transition={{ duration: 0.7, ease: 'circIn' }}>
 			<ExpandContainer>
 				<SubItem>{dataEducation[item].expand}</SubItem>
 			</ExpandContainer>
@@ -81,15 +90,26 @@ const ItemEducationList = ({ item, index }) => {
 
 	return (
 		<li key={index} onClick={handleClick}>
-			<div style={{ display: 'flex' }}>
-				<IconList>
-					<RightArrow />
-				</IconList>
-				<div>
-					{dataEducation[item].main}
-					{expand ? <SubEducationItems item={item} /> : null}
-				</div>
-			</div>
+			<motion.div
+				animation={expand ? { y: '100%' } : { y: '0' }}
+				transition={{ ease: 'easeOut', duration: 2 }}
+				style={{ display: 'flex' }}>
+				<AnimatePresence initial={false}>
+					<IconList
+						animate={{
+							rotate: !expand ? -0 : 90,
+							transformOrigin: '15% 50%',
+						}}>
+						<RightArrow />
+					</IconList>
+					<div style={{ paddingLeft: '1.3em' }}>
+						{dataEducation[item].main}
+						<AnimatePresence initial={false}>
+							{expand ? <SubEducationItems expand={expand} item={item} /> : null}
+						</AnimatePresence>
+					</div>
+				</AnimatePresence>
+			</motion.div>
 		</li>
 	);
 };
