@@ -62,7 +62,7 @@ const BodyList = styled.ul`
 	font-family: 'Titillium Web';
 `;
 
-const Experience = ({}) => {
+const Experience = ({ expRef }) => {
 	const [selected, setSelected] = useState(0);
 
 	const handleClick = (index) => {
@@ -71,7 +71,7 @@ const Experience = ({}) => {
 	};
 
 	return (
-		<Container>
+		<Container ref={expRef}>
 			<Title>
 				<TitleText>Experience</TitleText>
 				<Line />
@@ -94,9 +94,7 @@ const Experience = ({}) => {
 						</BodyList>
 					</AnimateSharedLayout>
 				</List>
-				<AnimateSharedLayout>
-					<ItemExperienceInfo selected={selected} />
-				</AnimateSharedLayout>
+				<ItemExperienceInfo selected={selected} />
 			</ListContainer>
 		</Container>
 	);

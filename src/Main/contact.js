@@ -37,9 +37,9 @@ const Line = styled.div`
 	background-color: white;
 `;
 
-const Contact = ({}) => {
+const Contact = ({ contactRef }) => {
 	return (
-		<Container>
+		<Container ref={contactRef}>
 			<Title>
 				<Line />
 				<TitleText>Contact Me</TitleText>

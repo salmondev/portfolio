@@ -64,7 +64,7 @@ const SubEducationItems = ({ item }) => {
 				open: { opacity: 1, height: '50px' },
 				collapsed: { opacity: 0, height: '0px' },
 			}}
-			transition={{ duration: 0.7, ease: 'circIn' }}>
+			transition={{ duration: 0.3, ease: 'circIn' }}>
 			<ExpandContainer>
 				<SubItem>{dataEducation[item].expand}</SubItem>
 			</ExpandContainer>
@@ -94,21 +94,19 @@ const ItemEducationList = ({ item, index }) => {
 				animation={expand ? { y: '100%' } : { y: '0' }}
 				transition={{ ease: 'easeOut', duration: 2 }}
 				style={{ display: 'flex' }}>
-				<AnimatePresence initial={false}>
-					<IconList
-						animate={{
-							rotate: !expand ? -0 : 90,
-							transformOrigin: '15% 50%',
-						}}>
-						<RightArrow />
-					</IconList>
-					<div style={{ paddingLeft: '1.3em' }}>
-						{dataEducation[item].main}
-						<AnimatePresence initial={false}>
-							{expand ? <SubEducationItems expand={expand} item={item} /> : null}
-						</AnimatePresence>
-					</div>
-				</AnimatePresence>
+				<IconList
+					animate={{
+						rotate: !expand ? -0 : 90,
+						transformOrigin: '15% 50%',
+					}}>
+					<RightArrow />
+				</IconList>
+				<div style={{ paddingLeft: '1.3em' }}>
+					<motion.span whileHover={{ color: 'palevioletred' }}>{dataEducation[item].main}</motion.span>
+					<AnimatePresence initial={false}>
+						{expand ? <SubEducationItems expand={expand} item={item} /> : null}
+					</AnimatePresence>
+				</div>
 			</motion.div>
 		</li>
 	);

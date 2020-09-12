@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
 import { dataExperience } from './data';
 
 const ExperienceInfo = styled(motion.div)`
@@ -12,7 +12,7 @@ const ExperienceInfo = styled(motion.div)`
 	height: 292px;
 `;
 
-const Title = styled.div`
+const Title = styled(motion.div)`
 	padding: 0 0.2em;
 	padding-bottom: 20px;
 `;

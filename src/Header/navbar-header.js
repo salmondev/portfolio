@@ -55,7 +55,7 @@ const HeaderLine = styled.div`
 	background-color: white;
 `;
 
-const NavbarHeader = ({ setDidScroll }) => {
+const NavbarHeader = ({ setDidScroll, handleScroll }) => {
 	const [scrollProgress, setScrollProgress] = useState('20%');
 
 	const listenToScrollEvent = () => {
@@ -74,30 +74,26 @@ const NavbarHeader = ({ setDidScroll }) => {
 		listenToScrollEvent();
 	}, []);
 
-	const handleClick = () => {
-		console.log('click');
-	};
-
 	return (
 		<HeaderContainer>
 			<Header scroll={scrollProgress}>
-				<HeaderTextContainer onClick={handleClick}>
+				<HeaderTextContainer id='about' onClick={handleScroll}>
 					<HeaderText>About</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer>
+				<HeaderTextContainer id='exp' onClick={handleScroll}>
 					<HeaderText>Experience</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer>
+				<HeaderTextContainer id='skills' onClick={handleScroll}>
 					<HeaderText>Skills</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer>
+				<HeaderTextContainer id='project' onClick={handleScroll}>
 					<HeaderText>Projects</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer>
+				<HeaderTextContainer id='contact' onClick={handleScroll}>
 					<HeaderText>Contact</HeaderText>
 				</HeaderTextContainer>
 			</Header>

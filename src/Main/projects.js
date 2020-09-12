@@ -37,9 +37,9 @@ const Line = styled.div`
 	background-color: white;
 `;
 
-const Projects = ({}) => {
+const Projects = ({ projectRef }) => {
 	return (
-		<Container>
+		<Container ref={projectRef}>
 			<Title>
 				<Line />
 				<TitleText>My Projects</TitleText>

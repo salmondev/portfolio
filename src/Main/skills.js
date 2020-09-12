@@ -75,9 +75,9 @@ const BodyList = styled.ul`
 	}
 `;
 
-const Skills = ({}) => {
+const Skills = ({ skillsRef }) => {
 	return (
-		<Container>
+		<Container ref={skillsRef}>
 			<Title>
 				<TitleText>Skills</TitleText>
 				<Line />

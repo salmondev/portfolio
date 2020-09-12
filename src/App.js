@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
@@ -16,6 +16,12 @@ function App() {
 	const [didScroll, setDidScroll] = useState(false);
 	const [toast, setToast] = useState([]);
 
+	const heroRef = useRef(null);
+	const expRef = useRef(null);
+	const skillsRef = useRef(null);
+	const projectRef = useRef(null);
+	const contactRef = useRef(null);
+
 	const handleToast = (msg) => {
 		setToast((oldVal) => [...oldVal, msg]);
 		setTimeout(() => {
@@ -23,13 +29,33 @@ function App() {
 		}, 3000);
 	};
 
+	const handleScroll = (e) => {
+		const { id } = e.currentTarget;
+		if (id === 'about') return scrollToRef(heroRef);
+		if (id === 'exp') return scrollToRef(expRef);
+		if (id === 'skills') return scrollToRef(skillsRef);
+		if (id === 'project') return scrollToRef(projectRef);
+		if (id === 'contact') return scrollToRef(contactRef);
+		return scrollToRef(heroRef);
+	};
+
+	const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+
 	return (
 		<Theme>
 			<AppContainer>
-				<Header setDidScroll={setDidScroll} />
+				<Header handleScroll={handleScroll} setDidScroll={setDidScroll} />
 				<Sidebar handleToast={handleToast} />
 				<Notification toast={toast} />
-				<Main handleToast={handleToast} didScroll={didScroll} />
+				<Main
+					heroRef={heroRef}
+					expRef={expRef}
+					skillsRef={skillsRef}
+					projectRef={projectRef}
+					contactRef={contactRef}
+					handleToast={handleToast}
+					didScroll={didScroll}
+				/>
 				<Footer />
 			</AppContainer>
 		</Theme>
