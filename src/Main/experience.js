@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion, AnimateSharedLayout } from 'framer-motion';
 import ItemExperienceList from './item-experience-list';
@@ -55,31 +55,55 @@ const List = styled(motion.div)`
 	width: 40%;
 `;
 
-const BodyList = styled.ul`
+const BodyList = styled(motion.ul)`
 	font-size: 20px;
 	letter-spacing: 2px;
 	list-style-type: none;
 	font-family: 'Titillium Web';
 `;
 
-const Experience = ({}) => {
+const Experience = ({ expRef }) => {
 	const [selected, setSelected] = useState(0);
+	const [lastYPos, setLastYPos] = useState(0);
+	const [shouldShowTitle, setShouldShowTitle] = useState(false);
+	const [shouldShowBody, setShouldShowBody] = useState(false);
 
-	const handleClick = (index) => {
-		setSelected(index);
-		return;
-	};
+	useEffect(() => {
+		function handleScroll() {
+			const yPos = window.scrollY;
+			const isScrollingUp = yPos > 450;
+			const shouldShowBody = yPos > 550;
+
+			if (isScrollingUp) setShouldShowTitle(true);
+			if (shouldShowBody) setShouldShowBody(true);
+			setLastYPos(yPos);
+		}
+
+		window.addEventListener('scroll', handleScroll, false);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll, false);
+		};
+	}, [lastYPos]);
+
+	const handleClick = (index) => setSelected(index);
 
 	return (
-		<Container>
-			<Title>
+		<Container ref={expRef}>
+			<Title
+				initial={{ opacity: 0, x: 300 }}
+				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : 300 }}
+				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
 				<TitleText>Experience</TitleText>
 				<Line />
 			</Title>
 			<ListContainer>
 				<List>
 					<AnimateSharedLayout>
-						<BodyList>
+						<BodyList
+							initial={{ opacity: 0, y: 100 }}
+							animate={{ opacity: shouldShowBody ? 1 : 0, y: shouldShowBody ? 0 : 100 }}
+							transition={{ duration: 1.2 }}>
 							{Object.keys(dataExperience.list).map((item, index) => {
 								return (
 									<ItemExperienceList
@@ -94,9 +118,7 @@ const Experience = ({}) => {
 						</BodyList>
 					</AnimateSharedLayout>
 				</List>
-				<AnimateSharedLayout>
-					<ItemExperienceInfo selected={selected} />
-				</AnimateSharedLayout>
+				<ItemExperienceInfo shouldShowBody={shouldShowBody} selected={selected} />
 			</ListContainer>
 		</Container>
 	);

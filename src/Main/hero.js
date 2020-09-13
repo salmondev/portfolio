@@ -93,7 +93,7 @@ const bounceTransition = {
 	},
 };
 
-const Hero = ({ didScroll, handleToast }) => {
+const Hero = ({ didScroll, handleToast, heroRef }) => {
 	const [count, setCount] = useState(0);
 
 	const variants = {
@@ -109,7 +109,7 @@ const Hero = ({ didScroll, handleToast }) => {
 	};
 
 	return (
-		<Container>
+		<Container ref={heroRef}>
 			<Content>
 				<Intro>
 					<FirstTitle>My name is,</FirstTitle>

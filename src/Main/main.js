@@ -6,14 +6,14 @@ import Skills from './skills';
 import Projects from './projects';
 import Contact from './contact';
 
-const Main = ({ didScroll, handleToast }) => {
+const Main = ({ didScroll, handleToast, heroRef, expRef, skillsRef, projectRef, contactRef }) => {
 	return (
 		<>
-			<Hero didScroll={didScroll} handleToast={handleToast} />
-			<Experience />
-			<Skills />
-			<Projects />
-			<Contact />
+			<Hero didScroll={didScroll} handleToast={handleToast} heroRef={heroRef} />
+			<Experience expRef={expRef} />
+			<Skills skillsRef={skillsRef} />
+			<Projects projectRef={projectRef} />
+			<Contact contactRef={contactRef} />
 		</>
 	);
 };
