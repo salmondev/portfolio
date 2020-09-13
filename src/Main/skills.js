@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
-import { RightArrow } from '@styled-icons/boxicons-regular/';
+import { motion, useAnimation } from 'framer-motion';
 import { dataEducation } from './data';
 import ItemEducationList from './item-education';
 import ListSkills from './list-skills';
@@ -61,7 +60,7 @@ const ListContainer = styled.div`
 	height: 355px;
 `;
 
-const BodyList = styled.ul`
+const BodyList = styled(motion.ul)`
 	font-size: 20px;
 	letter-spacing: 2px;
 	list-style-type: none;
@@ -76,16 +75,44 @@ const BodyList = styled.ul`
 `;
 
 const Skills = ({ skillsRef }) => {
+	const [lastYPos, setLastYPos] = useState(0);
+	const [shouldShowTitle, setShouldShowTitle] = useState(false);
+	const [shouldShowBody, setShouldShowBody] = useState(false);
+
+	useEffect(() => {
+		function handleScroll() {
+			const yPos = window.scrollY;
+			const isScrollingUp = yPos > 1100;
+			const shouldShowBody = yPos > 1300;
+
+			if (isScrollingUp) setShouldShowTitle(true);
+			if (shouldShowBody) setShouldShowBody(true);
+			setLastYPos(yPos);
+		}
+
+		window.addEventListener('scroll', handleScroll, false);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll, false);
+		};
+	}, [lastYPos]);
+
 	return (
 		<Container ref={skillsRef}>
-			<Title>
+			<Title
+				initial={{ opacity: 0, x: -200 }}
+				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : -200 }}
+				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
 				<TitleText>Skills</TitleText>
 				<Line />
 			</Title>
 			<EducationBox>
-				<ListSkills />
+				<ListSkills shouldShowBody={shouldShowBody} />
 				<ListContainer>
-					<BodyList>
+					<BodyList
+						initial={{ opacity: 0, x: 100 }}
+						animate={{ opacity: shouldShowBody ? 1 : 0, x: shouldShowBody ? 0 : 100 }}
+						transition={{ duration: 0.8 }}>
 						{Object.keys(dataEducation).map((item, key) => {
 							return <ItemEducationList item={item} index={key} key={key} />;
 						})}

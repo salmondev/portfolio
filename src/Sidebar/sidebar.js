@@ -62,7 +62,7 @@ const CheckIcon = () => {
 const Sidebar = ({ handleToast }) => {
 	const handleClipboardClick = () => {
 		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
-		handleToast(`Copy to clipboard! 🥳`);
+		handleToast(`Email copy to clipboard! 🥳`);
 		return;
 	};
 

@@ -40,9 +40,12 @@ const ColumnText = styled(motion.span)`
 	cursor: pointer;
 `;
 
-const Education = ({}) => {
+const Education = ({ shouldShowBody }) => {
 	return (
-		<Container>
+		<Container
+			initial={{ opacity: 0, y: 100 }}
+			animate={{ opacity: shouldShowBody ? 1 : 0, y: shouldShowBody ? 0 : 100 }}
+			transition={{ duration: 0.8 }}>
 			<SkillsColumn>
 				<TextContainer>
 					<ColumnText

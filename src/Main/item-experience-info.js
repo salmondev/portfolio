@@ -36,9 +36,12 @@ const Info = styled.li`
 	padding-bottom: 30px;
 `;
 
-const ItemExperienceInfo = ({ selected }) => {
+const ItemExperienceInfo = ({ selected, shouldShowBody }) => {
 	return (
-		<ExperienceInfo>
+		<ExperienceInfo
+			initial={{ opacity: 0 }}
+			animate={{ opacity: shouldShowBody ? 1 : 0 }}
+			transition={{ duration: 2.5 }}>
 			<Title>
 				<TitleText>{dataExperience.info[selected].title}</TitleText>
 				<DateText>{dataExperience.info[selected].date}</DateText>
