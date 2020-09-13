@@ -41,7 +41,33 @@ const Line = styled.div`
 	/* margin: 0px auto; */
 `;
 
+const ButtonBox = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 3em;
+`;
+
+const ButtonContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 50%;
+`;
+
+const Button = styled.h3`
+	cursor: pointer;
+	text-transform: uppercase;
+`;
+
+const Body = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
+
 const Projects = ({ projectRef }) => {
+	const [showAdvanced, setShowAdvanced] = useState(true);
 	const [lastYPos, setLastYPos] = useState(0);
 	const [shouldShowTitle, setShouldShowTitle] = useState(false);
 	const [shouldShowBody, setShouldShowBody] = useState(false);
@@ -50,7 +76,7 @@ const Projects = ({ projectRef }) => {
 		function handleScroll() {
 			const yPos = window.scrollY;
 			console.log(yPos);
-			const isScrollingUp = yPos > 500;
+			const isScrollingUp = yPos > 1750;
 			const shouldShowBody = yPos > 550;
 
 			if (isScrollingUp) setShouldShowTitle(true);
@@ -64,6 +90,14 @@ const Projects = ({ projectRef }) => {
 			window.removeEventListener('scroll', handleScroll, false);
 		};
 	}, [lastYPos]);
+
+	const handleProjects = (e) => {
+		const { id } = e.target;
+		if (id === 'advanced') return setShowAdvanced(true);
+		if (id === 'beginner') return setShowAdvanced(false);
+		return;
+	};
+
 	return (
 		<Container ref={projectRef}>
 			<Title
@@ -73,6 +107,17 @@ const Projects = ({ projectRef }) => {
 				<TitleText>My Projects</TitleText>
 				<Line />
 			</Title>
+			<ButtonBox>
+				<ButtonContainer>
+					<Button onClick={handleProjects} id='advanced'>
+						Advanced
+					</Button>
+					<Button onClick={handleProjects} id='beginner'>
+						Beginner
+					</Button>
+				</ButtonContainer>
+			</ButtonBox>
+			<Body>{showAdvanced ? <h1>Advanced</h1> : <h1>Beginner</h1>}</Body>
 		</Container>
 	);
 };

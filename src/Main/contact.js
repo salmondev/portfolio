@@ -28,7 +28,7 @@ const TitleText = styled.h1`
 	font-size: 32px;
 	padding-right: 0.7em;
 	padding-left: 1em;
-	color: palevioletred;
+	color: white;
 	font-family: 'Calibre', sans-serif;
 `;
 

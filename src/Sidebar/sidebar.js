@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
 import { Email } from '@styled-icons/material-twotone';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos';
-import { MessageSquareCheck } from '@styled-icons/boxicons-regular';
 
 const SideContainer = styled.div`
 	width: 40px;
@@ -55,10 +54,6 @@ const Line = styled.div`
 	background-color: white;
 `;
 
-const CheckIcon = () => {
-	return <MessageSquareCheck />;
-};
-
 const Sidebar = ({ handleToast }) => {
 	const handleClipboardClick = () => {
 		navigator.clipboard.writeText('alfonso.achiaga@gmail.com');
@@ -70,7 +65,7 @@ const Sidebar = ({ handleToast }) => {
 		<>
 			<LeftSideContainer>
 				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
-					<a href='https://github.com/Achiaga' target='_blank'>
+					<a href='https://github.com/Achiaga' target='_blank' rel='noopener noreferrer'>
 						<Github />
 					</a>
 				</SideIcon>
@@ -78,7 +73,10 @@ const Sidebar = ({ handleToast }) => {
 					<Email onClick={handleClipboardClick} />
 				</SideIcon>
 				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
-					<a href='https://www.linkedin.com/in/alfonso-diez-achiaga/' target='_blank'>
+					<a
+						href='https://www.linkedin.com/in/alfonso-diez-achiaga/'
+						target='_blank'
+						rel='noopener noreferrer'>
 						<LinkedinSquare />
 					</a>
 				</SideIcon>

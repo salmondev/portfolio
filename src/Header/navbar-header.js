@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 const HeaderContainer = styled.div`
 	position: fixed;
@@ -27,7 +26,7 @@ const Header = styled.div`
 	-webkit-background-clip: text;
 `;
 
-const HeaderTextContainer = styled(motion.div)`
+const HeaderTextContainer = styled.div`
 	padding: 0 10px;
 	height: 45px;
 	border-radius: 30px;
@@ -38,7 +37,7 @@ const HeaderTextContainer = styled(motion.div)`
 	cursor: pointer;
 `;
 
-const HeaderText = styled(motion.h4)`
+const HeaderText = styled.h4`
 	font-size: 18px;
 	margin: 0;
 	padding: 0;

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { dataExperience } from './data';
 
 const ExperienceInfo = styled(motion.div)`
