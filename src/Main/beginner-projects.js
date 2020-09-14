@@ -105,6 +105,7 @@ const Explanation = styled.p`
 	font-family: 'Calibre', sans-serif;
 `;
 const Technology = styled.div`
+	font-family: 'Roboto', sans-serif;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -161,9 +162,9 @@ const BeginnerProjects = ({}) => {
 
 	return (
 		<Container
-			animate={{ opacity: [0, 1], duration: 0.3 }}
-			exit={{ opacity: [1, 0], duration: 0.3 }}
-			transition={{ duration: 0.3 }}>
+			animate={{ opacity: [0, 1], duration: 0.4 }}
+			exit={{ opacity: [1, 0], duration: 0.4 }}
+			transition={{ duration: 0.4 }}>
 			<CardRow>
 				<Card>
 					<Link

@@ -20,7 +20,7 @@ function App() {
 	const expRef = useRef(null);
 	const skillsRef = useRef(null);
 	const projectRef = useRef(null);
-	const contactRef = useRef(null);
+	const aboutRef = useRef(null);
 
 	const handleToast = (msg) => {
 		setToast((oldVal) => [...oldVal, msg]);
@@ -31,11 +31,11 @@ function App() {
 
 	const handleScroll = (e) => {
 		const { id } = e.currentTarget;
-		if (id === 'about') return scrollToRef(heroRef);
+		if (id === 'intro') return scrollToRef(heroRef);
 		if (id === 'exp') return scrollToRef(expRef);
 		if (id === 'skills') return scrollToRef(skillsRef);
 		if (id === 'project') return scrollToRef(projectRef);
-		if (id === 'contact') return scrollToRef(contactRef);
+		if (id === 'about') return scrollToRef(aboutRef);
 		return scrollToRef(heroRef);
 	};
 
@@ -52,7 +52,7 @@ function App() {
 					expRef={expRef}
 					skillsRef={skillsRef}
 					projectRef={projectRef}
-					contactRef={contactRef}
+					aboutRef={aboutRef}
 					handleToast={handleToast}
 					didScroll={didScroll}
 				/>

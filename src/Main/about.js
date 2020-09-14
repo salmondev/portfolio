@@ -58,7 +58,7 @@ const TextContainer = styled.div`
 	}
 `;
 
-const Contact = ({ contactRef }) => {
+const About = ({ aboutRef }) => {
 	const [lastYPos, setLastYPos] = useState(0);
 	const [shouldShowTitle, setShouldShowTitle] = useState(false);
 	const [shouldShowBody, setShouldShowBody] = useState(false);
@@ -82,12 +82,12 @@ const Contact = ({ contactRef }) => {
 	}, [lastYPos]);
 
 	return (
-		<Container ref={contactRef}>
+		<Container ref={aboutRef}>
 			<Title
 				initial={{ opacity: 0, x: -300 }}
 				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : -300 }}
 				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
-				<TitleText>Contact Me</TitleText>
+				<TitleText>About Me</TitleText>
 				<Line />
 			</Title>
 			<Body>
@@ -100,4 +100,4 @@ const Contact = ({ contactRef }) => {
 	);
 };
 
-export default Contact;
+export default About;

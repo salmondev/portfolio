@@ -3,16 +3,16 @@ import Hero from './hero';
 import Experience from './experience';
 import Skills from './skills';
 import Projects from './projects';
-import Contact from './contact';
+import About from './about';
 
-const Main = ({ didScroll, handleToast, heroRef, expRef, skillsRef, projectRef, contactRef }) => {
+const Main = ({ didScroll, handleToast, heroRef, expRef, skillsRef, projectRef, aboutRef }) => {
 	return (
 		<>
 			<Hero didScroll={didScroll} handleToast={handleToast} heroRef={heroRef} />
 			<Experience expRef={expRef} />
 			<Skills skillsRef={skillsRef} />
 			<Projects projectRef={projectRef} />
-			<Contact contactRef={contactRef} />
+			<About aboutRef={aboutRef} />
 		</>
 	);
 };

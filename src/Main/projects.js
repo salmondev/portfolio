@@ -21,7 +21,7 @@ const Title = styled(motion.div)`
 	width: 100%;
 	color: white;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 48px;
 	padding-bottom: 0.5em;
@@ -38,7 +38,7 @@ const TitleText = styled.h1`
 const Line = styled.div`
 	content: '';
 	display: block;
-	width: 70%;
+	width: 75%;
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
 	/* margin: 0px auto; */
@@ -91,10 +91,9 @@ const BackgroundButton = styled(motion.div)`
 `;
 
 const Projects = ({ projectRef }) => {
-	const [showAdvanced, setShowAdvanced] = useState(false);
+	const [showAdvanced, setShowAdvanced] = useState(true);
 	const [lastYPos, setLastYPos] = useState(0);
 	const [shouldShowTitle, setShouldShowTitle] = useState(false);
-	const [shouldShowBody, setShouldShowBody] = useState(false);
 
 	useEffect(() => {
 		function handleScroll() {
@@ -103,7 +102,6 @@ const Projects = ({ projectRef }) => {
 			const shouldShowBody = yPos > 550;
 
 			if (isScrollingUp) setShouldShowTitle(true);
-			if (shouldShowBody) setShouldShowBody(true);
 			setLastYPos(yPos);
 		}
 
@@ -153,7 +151,9 @@ const Projects = ({ projectRef }) => {
 				</AnimateSharedLayout>
 			</ButtonBox>
 			<Body>
-				<AnimatePresence initial={false}>{!showAdvanced && <BeginnerProjects />}</AnimatePresence>
+				<AnimateSharedLayout initial={false}>
+					{showAdvanced ? <AdvancedProjects /> : <BeginnerProjects />}
+				</AnimateSharedLayout>
 			</Body>
 		</Container>
 	);

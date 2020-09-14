@@ -76,8 +76,8 @@ const NavbarHeader = ({ setDidScroll, handleScroll }) => {
 	return (
 		<HeaderContainer>
 			<Header scroll={scrollProgress}>
-				<HeaderTextContainer id='about' onClick={handleScroll}>
-					<HeaderText>About</HeaderText>
+				<HeaderTextContainer id='intro' onClick={handleScroll}>
+					<HeaderText>Intro</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
 				<HeaderTextContainer id='exp' onClick={handleScroll}>
@@ -92,8 +92,8 @@ const NavbarHeader = ({ setDidScroll, handleScroll }) => {
 					<HeaderText>Projects</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer id='contact' onClick={handleScroll}>
-					<HeaderText>Contact</HeaderText>
+				<HeaderTextContainer id='about' onClick={handleScroll}>
+					<HeaderText>About</HeaderText>
 				</HeaderTextContainer>
 			</Header>
 		</HeaderContainer>
