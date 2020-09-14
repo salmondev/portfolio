@@ -11,6 +11,7 @@ const Container = styled(motion.section)`
 	max-width: 1600px;
 	min-height: 90vh;
 	color: white;
+	overflow: hidden;
 	font-family: 'Asap', sans-serif;
 `;
 
@@ -52,6 +53,9 @@ const TextContainer = styled.div`
 	width: 50%;
 	text-align: center;
 	line-height: 30px;
+	svg {
+		color: none;
+	}
 `;
 
 const Contact = ({ contactRef }) => {
@@ -62,7 +66,6 @@ const Contact = ({ contactRef }) => {
 	useEffect(() => {
 		function handleScroll() {
 			const yPos = window.scrollY;
-			console.log(yPos);
 			const isScrollingUp = yPos > 2500;
 			const shouldShowBody = yPos > 550;
 
@@ -81,8 +84,8 @@ const Contact = ({ contactRef }) => {
 	return (
 		<Container ref={contactRef}>
 			<Title
-				initial={{ opacity: 0, x: 300 }}
-				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : 300 }}
+				initial={{ opacity: 0, x: -300 }}
+				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : -300 }}
 				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
 				<TitleText>Contact Me</TitleText>
 				<Line />

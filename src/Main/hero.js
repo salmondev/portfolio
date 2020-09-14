@@ -29,6 +29,7 @@ const Title = styled(motion.h1)`
 	text-align: start;
 	color: palevioletred;
 	font-family: 'Titillium Web';
+	cursor: grab;
 	span {
 		color: palevioletred;
 	}
@@ -38,6 +39,7 @@ const FirstTitle = styled(Title)`
 	font-size: 20px;
 	margin: 0.4em 0;
 	color: white;
+	cursor: default;
 	font-family: 'Asap', sans-serif;
 `;
 
@@ -45,6 +47,7 @@ const SubTitle = styled(Title)`
 	font-size: 38px;
 	margin: 0;
 	color: white;
+	cursor: default;
 	font-family: 'Asap', sans-serif;
 `;
 
@@ -54,6 +57,7 @@ const Description = styled(Title)`
 	font-size: 25px;
 	margin: 0;
 	color: white;
+	cursor: default;
 	word-spacing: 2px;
 	line-height: 45px;
 `;
