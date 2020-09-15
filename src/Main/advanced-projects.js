@@ -86,7 +86,7 @@ const VideoContainer = styled.div`
 	video {
 		width: 395px;
 		@media only screen and (max-width: 450px) {
-			width: 185px;
+			width: 186px;
 		}
 	}
 `;

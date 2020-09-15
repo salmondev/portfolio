@@ -55,7 +55,6 @@ const Line = styled.div`
 	width: 75%;
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
-	/* margin: 0px auto; */
 	@media only screen and (max-width: 450px) {
 		width: 45%;
 	}
@@ -78,7 +77,6 @@ const ButtonContainer = styled.div`
 	justify-content: space-between;
 	width: 22%;
 	padding: 0em 1.5em;
-	/* border: 1px solid palevioletred; */
 	border-radius: 5px;
 	background: #ffffff14;
 	box-shadow: rgb(0 0 0 / 14%) 0px 2px 3px 0px, rgb(0 0 0 / 15%) 0px 10px 15px 0px;
@@ -117,7 +115,6 @@ const BackgroundButton = styled(motion.div)`
 		left: -8px;
 		top: -6px;
 	}
-	/* box-shadow: rgb(0 0 0 / 28%) 0px 2px 3px 0px, rgb(0 0 0 / 15%) 0px 10px 15px 0px; */
 `;
 
 const Projects = ({ projectRef }) => {
