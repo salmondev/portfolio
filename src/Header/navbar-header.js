@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 
 const HeaderContainer = styled.div`
 	position: fixed;
@@ -27,7 +26,7 @@ const Header = styled.div`
 	-webkit-background-clip: text;
 `;
 
-const HeaderTextContainer = styled(motion.div)`
+const HeaderTextContainer = styled.div`
 	padding: 0 10px;
 	height: 45px;
 	border-radius: 30px;
@@ -38,7 +37,7 @@ const HeaderTextContainer = styled(motion.div)`
 	cursor: pointer;
 `;
 
-const HeaderText = styled(motion.h4)`
+const HeaderText = styled.h4`
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
@@ -55,30 +54,12 @@ const HeaderLine = styled.div`
 	background-color: white;
 `;
 
-const NavbarHeader = ({ setDidScroll, handleScroll }) => {
-	const [scrollProgress, setScrollProgress] = useState('20%');
-
-	const listenToScrollEvent = () => {
-		document.addEventListener('scroll', () => {
-			const scrollPx = document.documentElement.scrollTop;
-			const winHeightPx = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-			let scrolled = (scrollPx / winHeightPx) * 100;
-			scrolled = Math.round(scrolled + 20);
-			scrolled = `${scrolled}%`;
-			setDidScroll(true);
-			setScrollProgress(scrolled);
-		});
-	};
-
-	useEffect(() => {
-		listenToScrollEvent();
-	}, []);
-
+const NavbarHeader = ({ handleScroll, scrollProgress }) => {
 	return (
 		<HeaderContainer>
 			<Header scroll={scrollProgress}>
-				<HeaderTextContainer id='about' onClick={handleScroll}>
-					<HeaderText>About</HeaderText>
+				<HeaderTextContainer id='intro' onClick={handleScroll}>
+					<HeaderText>Intro</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
 				<HeaderTextContainer id='exp' onClick={handleScroll}>
@@ -93,8 +74,8 @@ const NavbarHeader = ({ setDidScroll, handleScroll }) => {
 					<HeaderText>Projects</HeaderText>
 				</HeaderTextContainer>
 				<HeaderLine />
-				<HeaderTextContainer id='contact' onClick={handleScroll}>
-					<HeaderText>Contact</HeaderText>
+				<HeaderTextContainer id='about' onClick={handleScroll}>
+					<HeaderText>About</HeaderText>
 				</HeaderTextContainer>
 			</Header>
 		</HeaderContainer>

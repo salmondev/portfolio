@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
@@ -13,6 +13,7 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+	const [scrollProgress, setScrollProgress] = useState('20%');
 	const [didScroll, setDidScroll] = useState(false);
 	const [toast, setToast] = useState([]);
 
@@ -20,7 +21,48 @@ function App() {
 	const expRef = useRef(null);
 	const skillsRef = useRef(null);
 	const projectRef = useRef(null);
-	const contactRef = useRef(null);
+	const aboutRef = useRef(null);
+
+	useEffect(() => {
+		listenToScrollEvent();
+	}, []);
+
+	const listenToScrollEvent = () => {
+		document.addEventListener('scroll', () => {
+			let scrolled;
+			const yPos = window.scrollY;
+			console.log(yPos);
+			if (yPos < 150) scrolled = `20%`;
+			if (yPos > 140) setDidScroll(true);
+			if (yPos > 150) {
+				scrolled = `${((yPos - 140) * 20) / 720 + 20}%`;
+			}
+			if (yPos > 860) {
+				scrolled = `${((yPos - 860) * 20) / 650 + 40}%`;
+			}
+			if (yPos > 1510) {
+				scrolled = `${((yPos - 1510) * 20) / 650 + 60}%`;
+			}
+			if (yPos > 2160) {
+				scrolled = `${((yPos - 2160) * 20) / 2720 + 80}%`;
+			}
+			if (yPos > 4880) scrolled = `100%`;
+
+			return setScrollProgress(scrolled);
+		});
+	};
+
+	const handleScroll = (e) => {
+		const { id } = e.currentTarget;
+		if (id === 'intro') return scrollToRef(heroRef);
+		if (id === 'exp') return scrollToRef(expRef);
+		if (id === 'skills') return scrollToRef(skillsRef);
+		if (id === 'project') return scrollToRef(projectRef);
+		if (id === 'about') return scrollToRef(aboutRef);
+		return scrollToRef(heroRef);
+	};
+
+	const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
 	const handleToast = (msg) => {
 		setToast((oldVal) => [...oldVal, msg]);
@@ -29,22 +71,10 @@ function App() {
 		}, 3000);
 	};
 
-	const handleScroll = (e) => {
-		const { id } = e.currentTarget;
-		if (id === 'about') return scrollToRef(heroRef);
-		if (id === 'exp') return scrollToRef(expRef);
-		if (id === 'skills') return scrollToRef(skillsRef);
-		if (id === 'project') return scrollToRef(projectRef);
-		if (id === 'contact') return scrollToRef(contactRef);
-		return scrollToRef(heroRef);
-	};
-
-	const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
-
 	return (
 		<Theme>
 			<AppContainer>
-				<Header handleScroll={handleScroll} setDidScroll={setDidScroll} />
+				<Header scrollProgress={scrollProgress} handleScroll={handleScroll} setDidScroll={setDidScroll} />
 				<Sidebar handleToast={handleToast} />
 				<Notification toast={toast} />
 				<Main
@@ -52,7 +82,7 @@ function App() {
 					expRef={expRef}
 					skillsRef={skillsRef}
 					projectRef={projectRef}
-					contactRef={contactRef}
+					aboutRef={aboutRef}
 					handleToast={handleToast}
 					didScroll={didScroll}
 				/>

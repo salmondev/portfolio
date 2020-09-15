@@ -13,6 +13,7 @@ const Container = styled(motion.section)`
 	margin: 0px auto;
 	max-width: 1600px;
 	color: white;
+	overflow: hidden;
 	font-family: 'Asap', sans-serif;
 `;
 
@@ -20,7 +21,7 @@ const Title = styled(motion.div)`
 	width: 100%;
 	color: white;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	height: 48px;
 	padding-bottom: 0.5em;
@@ -29,7 +30,6 @@ const Title = styled(motion.div)`
 const TitleText = styled.h1`
 	font-size: 32px;
 	padding-right: 0.7em;
-	padding-left: 1em;
 	color: palevioletred;
 	font-family: 'Calibre', sans-serif;
 `;
@@ -37,7 +37,7 @@ const TitleText = styled.h1`
 const Line = styled.div`
 	content: '';
 	display: block;
-	width: 70%;
+	width: 80%;
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
 	/* margin: 0px auto; */

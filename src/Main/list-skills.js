@@ -37,7 +37,7 @@ const ColumnText = styled(motion.span)`
 	width: 100%;
 	letter-spacing: 2px;
 	font-family: 'Calibre', sans-serif;
-	cursor: pointer;
+	cursor: default;
 `;
 
 const Education = ({ shouldShowBody }) => {
@@ -48,156 +48,64 @@ const Education = ({ shouldShowBody }) => {
 			transition={{ duration: 0.8 }}>
 			<SkillsColumn>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Reactjs
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Reactjs
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.2 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
-						Styled Components
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
+						#Styled Components
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Javascript
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Javascript
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
-						Bootstrap
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
+						#Bootstrap
 					</ColumnText>
 				</TextContainer>
 			</SkillsColumn>
 			<SkillsColumn>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
-						CSS
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>#CSS</ColumnText>
+				</TextContainer>
+				<TextContainer>
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Redux
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Redux
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
+						#HTML5
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
-						HTML5
-					</ColumnText>
-				</TextContainer>
-				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Hooks
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Hooks
 					</ColumnText>
 				</TextContainer>
 			</SkillsColumn>
 			<SkillsColumn>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Framer Motion
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Framer Motion
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
-						Rest API
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
+						#Rest API
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.35 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}
-						color={'pink'}>
-						Threejs
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
+						#Threejs
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
-					<ColumnText
-						whileHover={{ scaleY: 1.2 }}
-						transition={{
-							type: 'spring',
-							stiffness: 500,
-							damping: 5,
-							duration: 1,
-						}}>
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
 						React Transition Group
 					</ColumnText>
 				</TextContainer>
