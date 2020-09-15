@@ -10,7 +10,6 @@ import ToDo from '../assets/to-do.png';
 import SpaceBar from '../assets/space-bar.png';
 import RGB from '../assets/rgb-game.png';
 import Error404 from '../assets/error-404.png';
-import Fampain from '../assets/fampain.png';
 import MachineLearning from '../assets/machine-learning.png';
 import Argonauts from '../assets/argonauts.png';
 import Weather from '../assets/weather.png';
@@ -67,6 +66,7 @@ const LinkContainer = styled.div`
 		text-decoration: none;
 	}
 `;
+
 const Button = styled(motion.div)`
 	padding: 0.5em;
 	cursor: pointer;
@@ -104,6 +104,7 @@ const Explanation = styled.p`
 	padding: 10px 0;
 	font-family: 'Calibre', sans-serif;
 `;
+
 const Technology = styled.div`
 	font-family: 'Roboto', sans-serif;
 	display: flex;
@@ -111,6 +112,7 @@ const Technology = styled.div`
 	align-items: center;
 	width: 100%;
 `;
+
 const TechItems = styled.span`
 	padding-right: 5px;
 	padding-top: 0px;
@@ -161,10 +163,7 @@ const BeginnerProjects = ({}) => {
 	const handleShowMore = () => setShowMore(true);
 
 	return (
-		<Container
-			animate={{ opacity: [0, 1], duration: 0.4 }}
-			exit={{ opacity: [1, 0], duration: 0.4 }}
-			transition={{ duration: 0.4 }}>
+		<Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
 			<CardRow>
 				<Card>
 					<Link
@@ -206,7 +205,7 @@ const BeginnerProjects = ({}) => {
 					</ImgContainer>
 					<TextContainer>
 						<Title>Crypto</Title>
-						<Explanation>Shows crypto price with users dynamic interaction.</Explanation>
+						<Explanation>A MERN web about crypto price with users dynamic interaction.</Explanation>
 						<Technology>
 							<TechItems>
 								<Hastag>#</Hastag>React

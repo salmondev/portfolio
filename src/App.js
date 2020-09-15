@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
@@ -13,6 +13,7 @@ const AppContainer = styled.div`
 `;
 
 function App() {
+	const [scrollProgress, setScrollProgress] = useState('20%');
 	const [didScroll, setDidScroll] = useState(false);
 	const [toast, setToast] = useState([]);
 
@@ -22,11 +23,33 @@ function App() {
 	const projectRef = useRef(null);
 	const aboutRef = useRef(null);
 
-	const handleToast = (msg) => {
-		setToast((oldVal) => [...oldVal, msg]);
-		setTimeout(() => {
-			setToast((oldState) => oldState.splice(1, 1));
-		}, 3000);
+	useEffect(() => {
+		listenToScrollEvent();
+	}, []);
+
+	const listenToScrollEvent = () => {
+		document.addEventListener('scroll', () => {
+			let scrolled;
+			const yPos = window.scrollY;
+			console.log(yPos);
+			if (yPos < 150) scrolled = `20%`;
+			if (yPos > 140) setDidScroll(true);
+			if (yPos > 150) {
+				scrolled = `${((yPos - 140) * 20) / 720 + 20}%`;
+			}
+			if (yPos > 860) {
+				scrolled = `${((yPos - 860) * 20) / 650 + 40}%`;
+			}
+			if (yPos > 1510) {
+				scrolled = `${((yPos - 1510) * 20) / 650 + 60}%`;
+			}
+			if (yPos > 2160) {
+				scrolled = `${((yPos - 2160) * 20) / 2720 + 80}%`;
+			}
+			if (yPos > 4880) scrolled = `100%`;
+
+			return setScrollProgress(scrolled);
+		});
 	};
 
 	const handleScroll = (e) => {
@@ -41,10 +64,17 @@ function App() {
 
 	const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
+	const handleToast = (msg) => {
+		setToast((oldVal) => [...oldVal, msg]);
+		setTimeout(() => {
+			setToast((oldState) => oldState.splice(1, 1));
+		}, 3000);
+	};
+
 	return (
 		<Theme>
 			<AppContainer>
-				<Header handleScroll={handleScroll} setDidScroll={setDidScroll} />
+				<Header scrollProgress={scrollProgress} handleScroll={handleScroll} setDidScroll={setDidScroll} />
 				<Sidebar handleToast={handleToast} />
 				<Notification toast={toast} />
 				<Main

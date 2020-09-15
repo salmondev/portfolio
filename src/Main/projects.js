@@ -150,11 +150,7 @@ const Projects = ({ projectRef }) => {
 					</ButtonContainer>
 				</AnimateSharedLayout>
 			</ButtonBox>
-			<Body>
-				<AnimateSharedLayout initial={false}>
-					{showAdvanced ? <AdvancedProjects /> : <BeginnerProjects />}
-				</AnimateSharedLayout>
-			</Body>
+			<Body>{showAdvanced ? <AdvancedProjects /> : <BeginnerProjects />}</Body>
 		</Container>
 	);
 };
