@@ -6,6 +6,9 @@ const Container = styled.div`
 	color: white;
 	padding: 1rem 0;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 16px;
+	}
 `;
 
 const Text = styled.div`

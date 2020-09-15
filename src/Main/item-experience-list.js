@@ -24,6 +24,9 @@ const Item = styled(motion.li)`
 	span {
 		z-index: 2;
 	}
+	@media only screen and (max-width: 450px) {
+		line-height: 37px;
+	}
 `;
 
 const BackgroundTitle = styled(motion.div)`
@@ -34,6 +37,12 @@ const BackgroundTitle = styled(motion.div)`
 	position: absolute;
 	z-index: 0;
 	left: -10px;
+	@media only screen and (max-width: 450px) {
+		width: 265px;
+	}
+	@media only screen and (max-width: 400px) {
+		width: 242px;
+	}
 `;
 
 const ItemExperienceList = ({ item, index, handleClick, selected }) => {

@@ -31,7 +31,6 @@ function App() {
 		document.addEventListener('scroll', () => {
 			let scrolled;
 			const yPos = window.scrollY;
-			console.log(yPos);
 			if (yPos < 150) scrolled = `20%`;
 			if (yPos > 140) setDidScroll(true);
 			if (yPos > 150) {

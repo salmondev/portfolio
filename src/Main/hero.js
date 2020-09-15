@@ -10,6 +10,21 @@ const Container = styled(motion.section)`
 	margin: 0px auto;
 	/* max-width: 1600px; */
 	min-height: 75vh;
+	@media only screen and (max-height: 650px) {
+		padding-top: 100px;
+	}
+	@media only screen and (max-width: 800px) {
+		padding-left: 50px;
+		padding-right: 50px;
+		min-height: 40vh;
+	}
+	@media only screen and (max-width: 450px) {
+		padding-left: 10px;
+		padding-right: 10px;
+		min-height: 40vh;
+		max-width: 100vw;
+		padding-top: 130px;
+	}
 `;
 
 const Content = styled.div`
@@ -17,9 +32,19 @@ const Content = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: flex-start;
+	@media only screen and (max-width: 450px) {
+		padding-left: 20px;
+		padding-right: 15px;
+		min-height: 40vh;
+		max-width: 100%;
+	}
 `;
 
-const Intro = styled.div``;
+const Intro = styled.div`
+	@media only screen and (max-width: 450px) {
+		width: 100%;
+	}
+`;
 
 const Title = styled(motion.h1)`
 	margin: 0;
@@ -33,6 +58,13 @@ const Title = styled(motion.h1)`
 	span {
 		color: palevioletred;
 	}
+	@media only screen and (max-width: 800px) {
+		font-size: 60px;
+	}
+	@media only screen and (max-width: 450px) {
+		font-size: 40px;
+		width: 100%;
+	}
 `;
 
 const FirstTitle = styled(Title)`
@@ -41,6 +73,10 @@ const FirstTitle = styled(Title)`
 	color: white;
 	cursor: default;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 18px;
+		width: 100%;
+	}
 `;
 
 const SubTitle = styled(Title)`
@@ -49,6 +85,13 @@ const SubTitle = styled(Title)`
 	color: white;
 	cursor: default;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 800px) {
+		font-size: 30px;
+	}
+	@media only screen and (max-width: 450px) {
+		font-size: 23px;
+		width: 100%;
+	}
 `;
 
 const Description = styled(Title)`
@@ -60,6 +103,14 @@ const Description = styled(Title)`
 	cursor: default;
 	word-spacing: 2px;
 	line-height: 45px;
+	@media only screen and (max-width: 800px) {
+		font-size: 20px;
+	}
+	@media only screen and (max-width: 450px) {
+		width: 100%;
+		line-height: 32px;
+		font-size: 16px;
+	}
 `;
 
 const ScrollDown = styled.div`
@@ -78,6 +129,10 @@ const ScrollDown = styled.div`
 	svg {
 		width: 30px;
 	}
+	@media only screen and (max-width: 450px) {
+		bottom: 12px;
+		left: 37%;
+	}
 `;
 
 const ScrollDownContainer = styled(motion.div)`
@@ -86,6 +141,8 @@ const ScrollDownContainer = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	@media only screen and (max-width: 800px) {
+	}
 `;
 
 const bounceTransition = {

@@ -13,6 +13,14 @@ const Container = styled(motion.section)`
 	color: white;
 	overflow: hidden;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		padding-left: 23px;
+		padding-right: 23px;
+		min-height: auto;
+		max-width: auto;
+		padding-top: 50px;
+		padding-bottom: 100px;
+	}
 `;
 
 const Title = styled(motion.div)`
@@ -23,6 +31,9 @@ const Title = styled(motion.div)`
 	align-items: center;
 	height: 48px;
 	padding-bottom: 0.5em;
+	@media only screen and (max-width: 450px) {
+		height: 35px;
+	}
 `;
 
 const TitleText = styled.h1`
@@ -31,6 +42,9 @@ const TitleText = styled.h1`
 	padding-left: 1em;
 	color: white;
 	font-family: 'Calibre', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 22px;
+	}
 `;
 
 const Line = styled.div`
@@ -39,7 +53,9 @@ const Line = styled.div`
 	width: 70%;
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
-	/* margin: 0px auto; */
+	@media only screen and (max-width: 450px) {
+		width: 45%;
+	}
 `;
 
 const Body = styled.div`
@@ -47,6 +63,9 @@ const Body = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding-top: 4em;
+	@media only screen and (max-width: 450px) {
+		padding-top: 1em;
+	}
 `;
 
 const TextContainer = styled.div`
@@ -55,6 +74,10 @@ const TextContainer = styled.div`
 	line-height: 30px;
 	svg {
 		color: none;
+	}
+	@media only screen and (max-width: 450px) {
+		width: 100%;
+		padding: 0 1em;
 	}
 `;
 

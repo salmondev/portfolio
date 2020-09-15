@@ -11,6 +11,9 @@ const SideContainer = styled.div`
 	z-index: 10;
 	text-align: center;
 	color: white;
+	@media only screen and (max-width: 800px) {
+		display: none;
+	}
 `;
 const LeftSideContainer = styled(SideContainer)`
 	bottom: 0px;
