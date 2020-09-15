@@ -15,6 +15,13 @@ const Container = styled(motion.section)`
 	color: white;
 	overflow: hidden;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		padding-left: 30px;
+		padding-right: 30px;
+		min-height: 40vh;
+		max-width: 100vw;
+		padding-top: 130px;
+	}
 `;
 
 const Title = styled(motion.div)`
@@ -24,7 +31,10 @@ const Title = styled(motion.div)`
 	justify-content: flex-start;
 	align-items: center;
 	height: 48px;
-	padding-bottom: 0.5em;
+	padding-bottom: 0em;
+	@media only screen and (max-width: 450px) {
+		height: 35px;
+	}
 `;
 
 const TitleText = styled.h1`
@@ -32,6 +42,9 @@ const TitleText = styled.h1`
 	padding-right: 0.7em;
 	color: palevioletred;
 	font-family: 'Calibre', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 25px;
+	}
 `;
 
 const Line = styled.div`
@@ -41,6 +54,9 @@ const Line = styled.div`
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
 	/* margin: 0px auto; */
+	@media only screen and (max-width: 450px) {
+		width: 70%;
+	}
 `;
 
 const ListContainer = styled(motion.div)`
@@ -49,10 +65,16 @@ const ListContainer = styled(motion.div)`
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
+	@media only screen and (max-width: 450px) {
+		display: block;
+	}
 `;
 
 const List = styled(motion.div)`
 	width: 40%;
+	@media only screen and (max-width: 450px) {
+		width: 90%;
+	}
 `;
 
 const BodyList = styled(motion.ul)`
@@ -60,6 +82,12 @@ const BodyList = styled(motion.ul)`
 	letter-spacing: 2px;
 	list-style-type: none;
 	font-family: 'Titillium Web';
+	@media only screen and (max-width: 450px) {
+		font-size: 16px;
+	}
+	@media only screen and (max-width: 400px) {
+		font-size: 14px;
+	}
 `;
 
 const Experience = ({ expRef }) => {

@@ -15,6 +15,14 @@ const Container = styled(motion.section)`
 	color: white;
 	overflow: hidden;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		padding-left: 23px;
+		padding-right: 23px;
+		min-height: auto;
+		max-width: auto;
+		padding-top: 100px;
+		padding-bottom: 80px;
+	}
 `;
 
 const Title = styled(motion.div)`
@@ -24,6 +32,9 @@ const Title = styled(motion.div)`
 	justify-content: flex-start;
 	align-items: center;
 	height: 48px;
+	@media only screen and (max-width: 450px) {
+		height: 35px;
+	}
 `;
 
 const TitleText = styled.h1`
@@ -31,6 +42,9 @@ const TitleText = styled.h1`
 	padding-right: 0.7em;
 	color: white;
 	font-family: 'Calibre', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 25px;
+	}
 `;
 
 const Line = styled.div`
@@ -39,7 +53,9 @@ const Line = styled.div`
 	width: 85%;
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
-	/* margin: 0px auto; */
+	@media only screen and (max-width: 450px) {
+		width: 65%;
+	}
 `;
 
 const EducationBox = styled(motion.div)`
@@ -49,6 +65,10 @@ const EducationBox = styled(motion.div)`
 	justify-content: center;
 	align-items: baseline;
 	height: 355px;
+	@media only screen and (max-width: 450px) {
+		display: block;
+		height: auto;
+	}
 `;
 
 const ListContainer = styled.div`
@@ -58,6 +78,10 @@ const ListContainer = styled.div`
 	justify-content: flex-start;
 	align-items: baseline;
 	height: 355px;
+	@media only screen and (max-width: 450px) {
+		height: auto;
+		width: 100%;
+	}
 `;
 
 const BodyList = styled(motion.ul)`
@@ -71,6 +95,15 @@ const BodyList = styled(motion.ul)`
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		@media only screen and (max-width: 450px) {
+			line-height: 45px;
+		}
+	}
+	@media only screen and (max-width: 450px) {
+		padding: 0;
+		margin: 0;
+		padding-left: 0.6em;
+		padding-top: 0.6em;
 	}
 `;
 

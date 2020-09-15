@@ -10,11 +10,19 @@ const ExperienceInfo = styled(motion.div)`
 	border-radius: 8px;
 	padding: 1em;
 	height: 292px;
+	@media only screen and (max-width: 450px) {
+		width: 90%;
+		height: auto;
+		padding-bottom: 0;
+	}
 `;
 
 const Title = styled(motion.div)`
 	padding: 0 0.2em;
 	padding-bottom: 20px;
+	@media only screen and (max-width: 450px) {
+		padding-bottom: 7px;
+	}
 `;
 
 const TitleText = styled.h4`
@@ -22,18 +30,32 @@ const TitleText = styled.h4`
 	font-size: 22px;
 	margin: 0;
 	padding: 0.2em 0;
+	@media only screen and (max-width: 450px) {
+		font-size: 18px;
+	}
 `;
 
 const DateText = styled.span`
 	font-family: 'Roboto', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 16px;
+	}
 `;
 
 const Body = styled.div``;
 
-const ListInfo = styled.ul``;
+const ListInfo = styled.ul`
+	@media only screen and (max-width: 450px) {
+		padding-left: 20px;
+	}
+`;
 
 const Info = styled.li`
 	padding-bottom: 30px;
+	@media only screen and (max-width: 450px) {
+		font-size: 16px;
+		font-family: 'Roboto';
+	}
 `;
 
 const ItemExperienceInfo = ({ selected, shouldShowBody }) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { motion, AnimateSharedLayout, AnimatePresence } from 'framer-motion';
+import { motion, AnimateSharedLayout } from 'framer-motion';
 import BeginnerProjects from './beginner-projects';
 import AdvancedProjects from './advanced-projects';
 
@@ -15,6 +15,14 @@ const Container = styled(motion.section)`
 	color: white;
 	overflow: hidden;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		padding-left: 23px;
+		padding-right: 23px;
+		min-height: auto;
+		max-width: auto;
+		padding-top: 100px;
+		padding-bottom: 80px;
+	}
 `;
 
 const Title = styled(motion.div)`
@@ -25,6 +33,9 @@ const Title = styled(motion.div)`
 	align-items: center;
 	height: 48px;
 	padding-bottom: 0.5em;
+	@media only screen and (max-width: 450px) {
+		height: 35px;
+	}
 `;
 
 const TitleText = styled.h1`
@@ -33,6 +44,9 @@ const TitleText = styled.h1`
 	padding-left: 1em;
 	color: palevioletred;
 	font-family: 'Calibre', sans-serif;
+	@media only screen and (max-width: 450px) {
+		font-size: 22px;
+	}
 `;
 
 const Line = styled.div`
@@ -42,6 +56,9 @@ const Line = styled.div`
 	height: 0px;
 	border-bottom: 0.5px solid #ffffff5e;
 	/* margin: 0px auto; */
+	@media only screen and (max-width: 450px) {
+		width: 45%;
+	}
 `;
 
 const ButtonBox = styled.div`
@@ -49,6 +66,9 @@ const ButtonBox = styled.div`
 	align-items: center;
 	justify-content: center;
 	padding-top: 2em;
+	@media only screen and (max-width: 450px) {
+		padding-top: 1em;
+	}
 `;
 
 const ButtonContainer = styled.div`
@@ -62,6 +82,9 @@ const ButtonContainer = styled.div`
 	border-radius: 5px;
 	background: #ffffff14;
 	box-shadow: rgb(0 0 0 / 14%) 0px 2px 3px 0px, rgb(0 0 0 / 15%) 0px 10px 15px 0px;
+	@media only screen and (max-width: 450px) {
+		width: 55%;
+	}
 `;
 
 const Button = styled(motion.h3)`
@@ -69,6 +92,9 @@ const Button = styled(motion.h3)`
 	text-transform: uppercase;
 	position: relative;
 	z-index: 2;
+	@media only screen and (max-width: 450px) {
+		font-size: 14px;
+	}
 `;
 
 const Body = styled.div`
@@ -87,6 +113,10 @@ const BackgroundButton = styled(motion.div)`
 	left: -11px;
 	top: -7px;
 	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 10px 15px 0px;
+	@media only screen and (max-width: 450px) {
+		left: -8px;
+		top: -6px;
+	}
 	/* box-shadow: rgb(0 0 0 / 28%) 0px 2px 3px 0px, rgb(0 0 0 / 15%) 0px 10px 15px 0px; */
 `;
 
@@ -99,7 +129,6 @@ const Projects = ({ projectRef }) => {
 		function handleScroll() {
 			const yPos = window.scrollY;
 			const isScrollingUp = yPos > 1750;
-			const shouldShowBody = yPos > 550;
 
 			if (isScrollingUp) setShouldShowTitle(true);
 			setLastYPos(yPos);

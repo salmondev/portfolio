@@ -9,6 +9,11 @@ const Container = styled(motion.div)`
 	align-items: baseline;
 	padding-top: 3em;
 	height: 200px;
+	@media only screen and (max-width: 450px) {
+		padding-top: 0em;
+		height: auto;
+		width: 100%;
+	}
 `;
 
 const SkillsColumn = styled.div`
@@ -17,6 +22,9 @@ const SkillsColumn = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	width: 28%;
+	@media only screen and (max-width: 450px) {
+		width: 40%;
+	}
 `;
 
 const TextContainer = styled(motion.div)`
@@ -25,6 +33,9 @@ const TextContainer = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	@media only screen and (max-width: 450px) {
+		height: 65px;
+	}
 `;
 
 const ColumnText = styled(motion.span)`
@@ -38,6 +49,10 @@ const ColumnText = styled(motion.span)`
 	letter-spacing: 2px;
 	font-family: 'Calibre', sans-serif;
 	cursor: default;
+	@media only screen and (max-width: 450px) {
+		font-size: 14px;
+		flex: 0 0 130px;
+	}
 `;
 
 const Education = ({ shouldShowBody }) => {
@@ -70,11 +85,13 @@ const Education = ({ shouldShowBody }) => {
 			</SkillsColumn>
 			<SkillsColumn>
 				<TextContainer>
-					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>#CSS</ColumnText>
+					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
+						#Redux
+					</ColumnText>
 				</TextContainer>
 				<TextContainer>
 					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
-						#Redux
+						#CSS
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
@@ -91,7 +108,7 @@ const Education = ({ shouldShowBody }) => {
 			<SkillsColumn>
 				<TextContainer>
 					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
-						#Framer Motion
+						#Threejs
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
@@ -101,12 +118,12 @@ const Education = ({ shouldShowBody }) => {
 				</TextContainer>
 				<TextContainer>
 					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>
-						#Threejs
+						#Framer Motion
 					</ColumnText>
 				</TextContainer>
 				<TextContainer>
 					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }}>
-						React Transition Group
+						#Enzyme
 					</ColumnText>
 				</TextContainer>
 			</SkillsColumn>

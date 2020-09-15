@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion, AnimateSharedLayout } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
 import { ExternalLinkOutline } from '@styled-icons/evaicons-outline';
 import Snake from '../assets/snake.png';
@@ -22,6 +22,9 @@ const Container = styled(motion.div)`
 	overflow: hidden;
 	padding-top: 2em;
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		padding-top: 1em;
+	}
 `;
 
 const CardRow = styled(motion.div)`
@@ -157,7 +160,7 @@ const Link = ({ githubLink, externalLink }) => {
 	);
 };
 
-const BeginnerProjects = ({}) => {
+const BeginnerProjects = () => {
 	const [showMore, setShowMore] = useState(false);
 
 	const handleShowMore = () => setShowMore(true);
