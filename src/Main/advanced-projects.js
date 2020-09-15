@@ -182,7 +182,7 @@ const Button = styled(motion.div)`
 	}
 `;
 
-const AdvancedProjects = () => {
+const AdvancedProjects = ({ isMobile }) => {
 	return (
 		<Container initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
 			<Row>
@@ -371,7 +371,7 @@ const AdvancedProjects = () => {
 				<LeftRow text={false}>
 					<ImgContainer>
 						<Img src={AmmoTank} alt='ammo-tank' />
-						{false && (
+						{!isMobile && (
 							<VideoContainer>
 								<video muted controls autoPlay loop>
 									<source

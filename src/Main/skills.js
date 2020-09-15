@@ -108,23 +108,6 @@ const BodyList = styled(motion.ul)`
 `;
 
 const Skills = ({ skillsRef }) => {
-	const [lastYPos, setLastYPos] = useState(0);
-
-	useEffect(() => {
-		function handleScroll() {
-			const yPos = window.scrollY;
-			const isScrollingUp = yPos > 1100;
-			const shouldShowBody = yPos > 1300;
-			setLastYPos(yPos);
-		}
-
-		window.addEventListener('scroll', handleScroll, false);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll, false);
-		};
-	}, [lastYPos]);
-
 	return (
 		<Container ref={skillsRef}>
 			<Title>
