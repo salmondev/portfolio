@@ -58,7 +58,7 @@ const Info = styled.li`
 	}
 `;
 
-const ItemExperienceInfo = ({ selected, shouldShowBody }) => {
+const ItemExperienceInfo = ({ selected }) => {
 	return (
 		<ExperienceInfo>
 			<Title>

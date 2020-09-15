@@ -83,28 +83,6 @@ const TextContainer = styled.div`
 `;
 
 const About = ({ aboutRef }) => {
-	const [lastYPos, setLastYPos] = useState(0);
-	const [shouldShowTitle, setShouldShowTitle] = useState(false);
-	const [shouldShowBody, setShouldShowBody] = useState(false);
-
-	useEffect(() => {
-		function handleScroll() {
-			const yPos = window.scrollY;
-			const isScrollingUp = yPos > 2500;
-			const shouldShowBody = yPos > 550;
-
-			if (isScrollingUp) setShouldShowTitle(true);
-			if (shouldShowBody) setShouldShowBody(true);
-			setLastYPos(yPos);
-		}
-
-		window.addEventListener('scroll', handleScroll, false);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll, false);
-		};
-	}, [lastYPos]);
-
 	return (
 		<Container ref={aboutRef}>
 			<Title>

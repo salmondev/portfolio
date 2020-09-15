@@ -117,26 +117,20 @@ const BackgroundButton = styled(motion.div)`
 	}
 `;
 
+const useIsMobile = () => {
+	const [isMobile, setIsMobile] = useState(null);
+	useEffect(() => {
+		const width = window.innerWidth;
+		console.log(window);
+		setIsMobile(false);
+		if (width < 450) setIsMobile(true);
+	}, []);
+	return isMobile;
+};
+
 const Projects = ({ projectRef }) => {
 	const [showAdvanced, setShowAdvanced] = useState(true);
-	const [lastYPos, setLastYPos] = useState(0);
-	const [shouldShowTitle, setShouldShowTitle] = useState(false);
-
-	useEffect(() => {
-		function handleScroll() {
-			const yPos = window.scrollY;
-			const isScrollingUp = yPos > 1750;
-
-			if (isScrollingUp) setShouldShowTitle(true);
-			setLastYPos(yPos);
-		}
-
-		window.addEventListener('scroll', handleScroll, false);
-
-		return () => {
-			window.removeEventListener('scroll', handleScroll, false);
-		};
-	}, [lastYPos]);
+	const isMobile = useIsMobile();
 
 	const handleProjects = (e) => {
 		const { id } = e.target;
@@ -173,7 +167,7 @@ const Projects = ({ projectRef }) => {
 					</ButtonContainer>
 				</AnimateSharedLayout>
 			</ButtonBox>
-			<Body>{showAdvanced ? <AdvancedProjects /> : <BeginnerProjects />}</Body>
+			<Body>{showAdvanced ? <AdvancedProjects isMobile={isMobile} /> : <BeginnerProjects />}</Body>
 		</Container>
 	);
 };
