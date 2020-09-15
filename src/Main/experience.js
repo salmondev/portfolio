@@ -118,20 +118,14 @@ const Experience = ({ expRef }) => {
 
 	return (
 		<Container ref={expRef}>
-			<Title
-				initial={{ opacity: 0, x: 300 }}
-				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : 300 }}
-				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
+			<Title>
 				<TitleText>Experience</TitleText>
 				<Line />
 			</Title>
 			<ListContainer>
 				<List>
 					<AnimateSharedLayout>
-						<BodyList
-							initial={{ opacity: 0, y: 100 }}
-							animate={{ opacity: shouldShowBody ? 1 : 0, y: shouldShowBody ? 0 : 100 }}
-							transition={{ duration: 1.2 }}>
+						<BodyList>
 							{Object.keys(dataExperience.list).map((item, index) => {
 								return (
 									<ItemExperienceList

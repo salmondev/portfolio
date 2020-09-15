@@ -371,14 +371,16 @@ const AdvancedProjects = () => {
 				<LeftRow text={false}>
 					<ImgContainer>
 						<Img src={AmmoTank} alt='ammo-tank' />
-						<VideoContainer>
-							<video muted controls autoPlay loop>
-								<source
-									src='https://bender-portfolio.s3.amazonaws.com/Grabacio%CC%81n+de+pantalla+2020-09-14+a+las+21.23.43.mov'
-									type='video/mp4'
-								/>
-							</video>
-						</VideoContainer>
+						{false && (
+							<VideoContainer>
+								<video muted controls autoPlay loop>
+									<source
+										src='https://bender-portfolio.s3.amazonaws.com/Grabacio%CC%81n+de+pantalla+2020-09-14+a+las+21.23.43.mov'
+										type='video/mp4'
+									/>
+								</video>
+							</VideoContainer>
+						)}
 					</ImgContainer>
 				</LeftRow>
 				<RightRow text={true}>

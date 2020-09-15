@@ -60,10 +60,7 @@ const Info = styled.li`
 
 const ItemExperienceInfo = ({ selected, shouldShowBody }) => {
 	return (
-		<ExperienceInfo
-			initial={{ opacity: 0 }}
-			animate={{ opacity: shouldShowBody ? 1 : 0 }}
-			transition={{ duration: 2.5 }}>
+		<ExperienceInfo>
 			<Title>
 				<TitleText>{dataExperience.info[selected].title}</TitleText>
 				<DateText>{dataExperience.info[selected].date}</DateText>

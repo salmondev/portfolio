@@ -147,10 +147,7 @@ const Projects = ({ projectRef }) => {
 
 	return (
 		<Container ref={projectRef}>
-			<Title
-				initial={{ opacity: 0, x: 300 }}
-				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : 300 }}
-				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
+			<Title>
 				<TitleText>My Projects</TitleText>
 				<Line />
 			</Title>
