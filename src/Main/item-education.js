@@ -90,10 +90,7 @@ const ItemEducationList = ({ item, index }) => {
 
 	return (
 		<li key={index} onClick={handleClick}>
-			<motion.div
-				animation={expand ? { y: '100%' } : { y: '0' }}
-				transition={{ ease: 'easeOut', duration: 2 }}
-				style={{ display: 'flex' }}>
+			<motion.div>
 				<IconList
 					animate={{
 						rotate: !expand ? -0 : 90,

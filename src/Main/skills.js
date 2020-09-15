@@ -109,17 +109,12 @@ const BodyList = styled(motion.ul)`
 
 const Skills = ({ skillsRef }) => {
 	const [lastYPos, setLastYPos] = useState(0);
-	const [shouldShowTitle, setShouldShowTitle] = useState(false);
-	const [shouldShowBody, setShouldShowBody] = useState(false);
 
 	useEffect(() => {
 		function handleScroll() {
 			const yPos = window.scrollY;
 			const isScrollingUp = yPos > 1100;
 			const shouldShowBody = yPos > 1300;
-
-			if (isScrollingUp) setShouldShowTitle(true);
-			if (shouldShowBody) setShouldShowBody(true);
 			setLastYPos(yPos);
 		}
 
@@ -132,20 +127,14 @@ const Skills = ({ skillsRef }) => {
 
 	return (
 		<Container ref={skillsRef}>
-			<Title
-				initial={{ opacity: 0, x: -200 }}
-				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : -200 }}
-				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
+			<Title>
 				<TitleText>Skills</TitleText>
 				<Line />
 			</Title>
 			<EducationBox>
-				<ListSkills shouldShowBody={shouldShowBody} />
+				<ListSkills />
 				<ListContainer>
-					<BodyList
-						initial={{ opacity: 0, x: 100 }}
-						animate={{ opacity: shouldShowBody ? 1 : 0, x: shouldShowBody ? 0 : 100 }}
-						transition={{ duration: 0.8 }}>
+					<BodyList>
 						{Object.keys(dataEducation).map((item, key) => {
 							return <ItemEducationList item={item} index={key} key={key} />;
 						})}

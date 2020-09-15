@@ -55,12 +55,9 @@ const ColumnText = styled(motion.span)`
 	}
 `;
 
-const Education = ({ shouldShowBody }) => {
+const Education = () => {
 	return (
-		<Container
-			initial={{ opacity: 0, y: 100 }}
-			animate={{ opacity: shouldShowBody ? 1 : 0, y: shouldShowBody ? 0 : 100 }}
-			transition={{ duration: 0.8 }}>
+		<Container>
 			<SkillsColumn>
 				<TextContainer>
 					<ColumnText whileHover={{ scaleX: [1, 1.2, 0.85, 1], scaleY: [1, 0.8, 1.15, 1] }} color={'pink'}>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 const Container = styled(motion.section)`
 	padding-top: 140px;
@@ -106,10 +107,7 @@ const About = ({ aboutRef }) => {
 
 	return (
 		<Container ref={aboutRef}>
-			<Title
-				initial={{ opacity: 0, x: -300 }}
-				animate={{ opacity: shouldShowTitle ? 1 : 0, x: shouldShowTitle ? 0 : -300 }}
-				transition={{ x: { type: 'spring', stiffness: 100, damping: 7 }, default: { duration: 0.5 } }}>
+			<Title>
 				<TitleText>About Me</TitleText>
 				<Line />
 			</Title>
