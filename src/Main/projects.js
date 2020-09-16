@@ -121,7 +121,7 @@ const useIsMobile = () => {
 	const [isMobile, setIsMobile] = useState(null);
 	useEffect(() => {
 		const width = window.innerWidth;
-		console.log(window);
+		console.log(window.navigator.platform);
 		setIsMobile(false);
 		if (width < 450) setIsMobile(true);
 	}, []);

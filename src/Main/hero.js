@@ -192,7 +192,7 @@ const Hero = ({ didScroll, handleToast, heroRef }) => {
 					</SubTitle>
 					<Description initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
 						{
-							"I'm a self-taught frontend software engineer. I'm 23 years old. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like building ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
+							"I'm a self-taught frontend software engineer. Male. 23 years old. I have lived in 🇪🇸 🇸🇪 🇰🇷. I like building ( and designing ) exceptional websites, applications, and everything in between.  I speak fluently  🇪🇸  🇺🇸."
 						}
 					</Description>
 				</Intro>
