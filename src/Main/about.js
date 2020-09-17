@@ -91,7 +91,7 @@ const Text = styled.p`
 		padding: 0em;
 		margin: 0em;
 		font-size: 15px;
-		text-align: justify;
+		text-align: center;
 		line-height: 25px;
 		letter-spacing: 1px;
 		word-spacing: 4px;
@@ -114,6 +114,7 @@ const About = ({ aboutRef }) => {
 					</Text>
 					<br />
 					<br />
+					<br />
 					<Text>
 						I have a profound passion for programming and new technology. I love to learn new things and build
 						stuff. I studied mechanical engineer although I always like computers, learning programming
@@ -128,12 +129,14 @@ const About = ({ aboutRef }) => {
 					</Text>
 					<br />
 					<br />
+					<br />
 					<Text>
 						My preferable area is frontend using Reactjs, I love how React makes it so easy to improve the
 						user's experience. As an engineer, I like UX and the balance between UI and UX. I love to build
 						nice looking easy to use responsive web sites. I don't mind getting my hands on other areas if
 						needed like backend but my area of expertise is frontend.
 					</Text>
+					<br />
 					<br />
 					<br />
 					<Text>
