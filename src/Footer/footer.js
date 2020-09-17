@@ -11,14 +11,20 @@ const Container = styled.div`
 	}
 `;
 
-const Text = styled.div`
+const Text = styled.p`
 	text-align: center;
 `;
 
 const Footer = () => {
 	return (
 		<Container>
-			<Text>'All this projects are powered by a lot of ☕️'</Text>
+			<Text>
+				'All this projects are powered by a lot of
+				<span role='img' aria-label='coffe'>
+					☕️
+				</span>
+				'
+			</Text>
 		</Container>
 	);
 };

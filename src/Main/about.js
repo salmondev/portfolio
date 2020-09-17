@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { isMobile } from 'react-device-detect';
 
 const Container = styled(motion.section)`
 	padding-top: 140px;
@@ -10,7 +9,7 @@ const Container = styled(motion.section)`
 	padding-right: 170px;
 	margin: 0px auto;
 	max-width: 1600px;
-	min-height: 90vh;
+	min-height: 100vh;
 	color: white;
 	overflow: hidden;
 	font-family: 'Asap', sans-serif;
@@ -70,7 +69,7 @@ const Body = styled.div`
 `;
 
 const TextContainer = styled.div`
-	width: 50%;
+	width: 90%;
 	text-align: center;
 	line-height: 30px;
 	svg {
@@ -79,6 +78,23 @@ const TextContainer = styled.div`
 	@media only screen and (max-width: 450px) {
 		width: 100%;
 		padding: 0 1em;
+	}
+`;
+
+const Text = styled.p`
+	font-family: Titillium Web;
+	margin: 0;
+	padding-bottom: ${(props) => (props.space ? '1em' : '0')};
+	font-size: 20px;
+	text-align: justify;
+	@media only screen and (max-width: 450px) {
+		padding: 0em;
+		margin: 0em;
+		font-size: 15px;
+		text-align: center;
+		line-height: 25px;
+		letter-spacing: 1px;
+		word-spacing: 4px;
 	}
 `;
 
@@ -91,8 +107,43 @@ const About = ({ aboutRef }) => {
 			</Title>
 			<Body>
 				<TextContainer>
-					Although I'm not currently looking for any new opportunities, my inbox is always open. Whether you
-					have a question or just want to say hi, I'll try my best to get back to you!
+					<Text>
+						I'm currently looking for new opportunities. I'm always open to new projects, ideas, job
+						opportunities and new connections. I love building new stuff so just send me a message and I will
+						answer you 100%.
+					</Text>
+					<br />
+					<br />
+					<br />
+					<Text>
+						I have a profound passion for programming and new technology. I love to learn new things and build
+						stuff. I studied mechanical engineer although I always like computers, learning programming
+						started as a hobby, until I decided to make the big step and change my whole career into
+						programming.
+					</Text>
+					<br />
+					<Text>
+						I don't like to quit. Once I start something I finish it, so instead of dropping out of college to
+						pursue my dream of being a programmer, I decided to finish my mechanical engineer degree while
+						learning and working as a programmer.
+					</Text>
+					<br />
+					<br />
+					<br />
+					<Text>
+						My preferable area is frontend using Reactjs, I love how React makes it so easy to improve the
+						user's experience. As an engineer, I like UX and the balance between UI and UX. I love to build
+						nice looking easy to use responsive web sites. I don't mind getting my hands on other areas if
+						needed like backend but my area of expertise is frontend.
+					</Text>
+					<br />
+					<br />
+					<br />
+					<Text>
+						Switching carrers is the best decission I have ever made and I am so happy with it. I am a happy
+						person who enjoys work. So my dream company would be one with a really good enviroment with my
+						coworkers.
+					</Text>
 				</TextContainer>
 			</Body>
 		</Container>
