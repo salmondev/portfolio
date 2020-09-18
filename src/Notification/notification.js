@@ -8,7 +8,7 @@ const ToastWrapper = styled.div`
 	left: 20px;
 	z-index: 9999;
 	@media only screen and (max-width: 450px) {
-		top: 10px;
+		top: 20px;
 		left: 10px;
 	}
 `;
@@ -31,7 +31,7 @@ const Toast = styled.div`
 		0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 	font-family: 'Asap', sans-serif;
 	@media only screen and (max-width: 450px) {
-		width: 250px;
+		width: 300px;
 		height: 25px;
 	}
 `;

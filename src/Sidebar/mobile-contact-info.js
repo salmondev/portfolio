@@ -16,7 +16,7 @@ const SideContainer = styled.div`
 		justify-content: space-around;
 		align-items: center;
 		width: 80%;
-		bottom: 20px;
+		bottom: 45px;
 		left: 10px;
 		z-index: 10;
 		text-align: center;
@@ -43,6 +43,7 @@ const ExpandIcon = styled(SideIcon)`
 	background: palevioletred;
 	padding: 10px;
 	z-index: 11;
+	box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 3px 0px, rgba(0, 0, 0, 0.06) 0px 10px 15px 0px;
 	svg {
 		width: 30px;
 		color: #1f1f1f;
