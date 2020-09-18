@@ -20,6 +20,14 @@ const ExperienceInfo = styled(motion.div)`
 const Title = styled(motion.div)`
 	padding: 0 0.2em;
 	padding-bottom: 20px;
+	a {
+		color: white;
+		text-decoration: none;
+		cursor: pointer;
+		&:hover {
+			color: palevioletred;
+		}
+	}
 	@media only screen and (max-width: 450px) {
 		padding-bottom: 7px;
 	}
@@ -62,14 +70,16 @@ const ItemExperienceInfo = ({ selected }) => {
 	return (
 		<ExperienceInfo>
 			<Title>
-				<TitleText>{dataExperience.info[selected].title}</TitleText>
+				<a href={dataExperience.info[selected].link} target='_blank' rel='noopener noreferrer'>
+					<TitleText>{dataExperience.info[selected].title}</TitleText>
+				</a>
 				<DateText>{dataExperience.info[selected].date}</DateText>
 			</Title>
 			<Body>
 				<ListInfo>
-					<Info>{dataExperience.info[selected].first}</Info>
-					<Info>{dataExperience.info[selected].second}</Info>
-					<Info>{dataExperience.info[selected].third}</Info>
+					{dataExperience.info[selected].first && <Info>{dataExperience.info[selected].first}</Info>}
+					{dataExperience.info[selected].second && <Info>{dataExperience.info[selected].second}</Info>}
+					{dataExperience.info[selected].third && <Info>{dataExperience.info[selected].third}</Info>}
 				</ListInfo>
 			</Body>
 		</ExperienceInfo>

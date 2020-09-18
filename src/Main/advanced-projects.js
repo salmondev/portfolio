@@ -236,10 +236,7 @@ const AdvancedProjects = ({ isMobile }) => {
 				<LeftRow text={true}>
 					<Card>
 						<Title>Wanteat App</Title>
-						<Description>
-							An open-source project about calculating the carbon foootprint for individuals and small
-							companies.
-						</Description>
+						<Description>Healthy mealplan generator to maintain your diet without getting bored.</Description>
 						<Technology>
 							<TechItems>
 								<Hastag>#</Hastag>React
@@ -253,10 +250,10 @@ const AdvancedProjects = ({ isMobile }) => {
 						</Technology>
 						<Technology>
 							<TechItems>
-								<Hastag>#</Hastag>React-three-fiber
+								<Hastag>#</Hastag>Api
 							</TechItems>
 							<TechItems>
-								<Hastag>#</Hastag>Material-ui
+								<Hastag>#</Hastag>Fauna
 							</TechItems>
 						</Technology>
 						<ButtonContainer>
