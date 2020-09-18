@@ -4,6 +4,7 @@ import { InitializeAnalytics } from './utils/analytics';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
 import Sidebar from './Sidebar/sidebar';
+import MobileContactInfo from './Sidebar/mobile-contact-info';
 import Main from './Main/main';
 import Notification from './Notification/notification';
 import Footer from './Footer/footer';
@@ -33,7 +34,7 @@ function App() {
 		}
 		listenToScrollEvent();
 		var ua = navigator.userAgent.toLowerCase();
-		if (ua.indexOf('safari') != -1) {
+		if (ua.indexOf('safari') !== -1) {
 			if (ua.indexOf('chrome') > -1) {
 				setIsSafari(false); // Chrome
 			} else {
@@ -95,6 +96,7 @@ function App() {
 					setDidScroll={setDidScroll}
 				/>
 				<Sidebar handleToast={handleToast} />
+				<MobileContactInfo handleToast={handleToast} />
 				<Notification toast={toast} />
 				<Main
 					heroRef={heroRef}

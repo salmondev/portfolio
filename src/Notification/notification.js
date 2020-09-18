@@ -7,6 +7,10 @@ const ToastWrapper = styled.div`
 	bottom: 20px;
 	left: 20px;
 	z-index: 9999;
+	@media only screen and (max-width: 450px) {
+		top: 10px;
+		left: 10px;
+	}
 `;
 
 const Toast = styled.div`
@@ -26,6 +30,10 @@ const Toast = styled.div`
 	box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
 		0px 1px 18px 0px rgba(0, 0, 0, 0.12);
 	font-family: 'Asap', sans-serif;
+	@media only screen and (max-width: 450px) {
+		width: 250px;
+		height: 25px;
+	}
 `;
 
 function Notification({ toast }) {
