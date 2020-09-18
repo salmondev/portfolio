@@ -5,9 +5,9 @@ const Container = styled.div`
 	font-size: 20px;
 	color: white;
 	padding: 1rem 0;
-	font-family: 'Asap', sans-serif;
+	font-family: monospace;
 	@media only screen and (max-width: 450px) {
-		font-size: 16px;
+		font-size: 12px;
 	}
 `;
 
@@ -21,6 +21,7 @@ const Footer = () => {
 			<Text>
 				'All this projects are powered by a lot of
 				<span role='img' aria-label='coffe'>
+					{'  '}
 					☕️
 				</span>
 				'
