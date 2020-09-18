@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
+import { InitializeAnalytics } from './utils/analytics';
 import Theme from './Theme';
 import Header from './Header/navbar-header';
 import Sidebar from './Sidebar/sidebar';
@@ -24,6 +25,11 @@ function App() {
 	const aboutRef = useRef(null);
 
 	useEffect(() => {
+		try {
+			InitializeAnalytics();
+		} catch (err) {
+			console.log('HOTJAR not working on local');
+		}
 		listenToScrollEvent();
 	}, []);
 

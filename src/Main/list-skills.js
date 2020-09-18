@@ -50,6 +50,7 @@ const ColumnText = styled(motion.span)`
 	font-family: 'Calibre', sans-serif;
 	cursor: default;
 	@media only screen and (max-width: 450px) {
+		text-align: center;
 		font-size: 14px;
 		flex: 0 0 130px;
 	}

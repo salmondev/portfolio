@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Github } from '@styled-icons/boxicons-logos';
 import { Email } from '@styled-icons/material-twotone';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos';
+import { FilePdf } from '@styled-icons/boxicons-solid';
 
 const SideContainer = styled.div`
 	width: 40px;
@@ -68,6 +69,14 @@ const Sidebar = ({ handleToast }) => {
 		<>
 			<LeftSideContainer>
 				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
+					<a
+						href='https://bender-portfolio.s3.amazonaws.com/cv-alfonso-achiaga.pdf'
+						target='_blank'
+						rel='noopener noreferrer'>
+						<FilePdf />
+					</a>
+				</SideIcon>
+				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
 					<a href='https://github.com/Achiaga' target='_blank' rel='noopener noreferrer'>
 						<Github />
 					</a>
@@ -76,10 +85,7 @@ const Sidebar = ({ handleToast }) => {
 					<Email onClick={handleClipboardClick} />
 				</SideIcon>
 				<SideIcon whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.85 }}>
-					<a
-						href='https://www.linkedin.com/in/alfonso-diez-achiaga/'
-						target='_blank'
-						rel='noopener noreferrer'>
+					<a href='https://www.linkedin.com/in/alfonso-achiaga/' target='_blank' rel='noopener noreferrer'>
 						<LinkedinSquare />
 					</a>
 				</SideIcon>
