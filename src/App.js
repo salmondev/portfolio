@@ -17,6 +17,7 @@ function App() {
 	const [scrollProgress, setScrollProgress] = useState('20%');
 	const [didScroll, setDidScroll] = useState(false);
 	const [toast, setToast] = useState([]);
+	const [isSafari, setIsSafari] = useState(false);
 
 	const heroRef = useRef(null);
 	const expRef = useRef(null);
@@ -31,6 +32,14 @@ function App() {
 			console.log('HOTJAR not working on local');
 		}
 		listenToScrollEvent();
+		var ua = navigator.userAgent.toLowerCase();
+		if (ua.indexOf('safari') != -1) {
+			if (ua.indexOf('chrome') > -1) {
+				setIsSafari(false); // Chrome
+			} else {
+				setIsSafari(true); // Safari
+			}
+		}
 	}, []);
 
 	const listenToScrollEvent = () => {
@@ -79,7 +88,12 @@ function App() {
 	return (
 		<Theme>
 			<AppContainer>
-				<Header scrollProgress={scrollProgress} handleScroll={handleScroll} setDidScroll={setDidScroll} />
+				<Header
+					isSafari={isSafari}
+					scrollProgress={scrollProgress}
+					handleScroll={handleScroll}
+					setDidScroll={setDidScroll}
+				/>
 				<Sidebar handleToast={handleToast} />
 				<Notification toast={toast} />
 				<Main

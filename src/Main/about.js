@@ -101,6 +101,7 @@ const Text = styled.p`
 
 const TextDecoration = styled.p`
 	font-family: fantasy;
+	font-family: Noteworthy;
 	margin: 0;
 	font-size: 20px;
 	text-align: center;

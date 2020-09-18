@@ -22,7 +22,7 @@ const Header = styled.div`
 	width: 50%;
 	background: #1f1f1f;
 	background: linear-gradient(to right, palevioletred ${(props) => props.scroll}, white 0);
-	color: transparent;
+	color: ${(props) => (props.isSafari ? 'white' : 'transparent')};
 	-webkit-background-clip: text;
 	@media only screen and (max-width: 800px) {
 		width: 90%;
@@ -50,7 +50,7 @@ const HeaderText = styled.h4`
 	font-size: 18px;
 	margin: 0;
 	padding: 0;
-	color: transparent;
+
 	background: transparent;
 	@media only screen and (max-width: 450px) {
 		font-size: 14px;
@@ -65,7 +65,7 @@ const HeaderLine = styled.div`
 	height: 2px;
 	min-width: 6%;
 	margin: 0px auto;
-	color: transparent;
+
 	background-color: white;
 	@media only screen and (max-width: 450px) {
 		min-width: 4%;
@@ -79,10 +79,10 @@ const HeaderLine = styled.div`
 	}
 `;
 
-const NavbarHeader = ({ handleScroll, scrollProgress }) => {
+const NavbarHeader = ({ isSafari, handleScroll, scrollProgress }) => {
 	return (
 		<HeaderContainer>
-			<Header scroll={scrollProgress}>
+			<Header isSafari={isSafari} scroll={scrollProgress}>
 				<HeaderTextContainer id='intro' onClick={handleScroll}>
 					<HeaderText>Intro</HeaderText>
 				</HeaderTextContainer>
