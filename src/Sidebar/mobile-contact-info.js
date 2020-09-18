@@ -16,7 +16,7 @@ const SideContainer = styled.div`
 		justify-content: space-around;
 		align-items: center;
 		width: 80%;
-		bottom: 10px;
+		bottom: 20px;
 		left: 10px;
 		z-index: 10;
 		text-align: center;
@@ -31,7 +31,7 @@ const SideIcon = styled(motion.div)`
 		text-decoration: none;
 	}
 	svg {
-		width: 45px;
+		width: 50px;
 		cursor: pointer;
 	}
 `;
@@ -41,7 +41,8 @@ const ExpandIcon = styled(SideIcon)`
 	padding: 0;
 	border-radius: 50%;
 	background: palevioletred;
-	padding: 8px;
+	padding: 10px;
+	z-index: 11;
 	svg {
 		width: 30px;
 		color: #1f1f1f;
@@ -75,7 +76,7 @@ const MobileContactInfo = ({ handleToast }) => {
 	return (
 		<>
 			<SideContainer>
-				<ExpandIcon whileTap={{ scale: 0.85 }} onClick={handleExpandIcons} whileTap={{ scale: 0.85 }}>
+				<ExpandIcon whileTap={{ scale: 0.85 }} onClick={handleExpandIcons}>
 					<MoreHorizontal />
 				</ExpandIcon>
 				<SideIcon
