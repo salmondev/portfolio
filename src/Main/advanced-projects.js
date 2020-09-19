@@ -368,7 +368,7 @@ const AdvancedProjects = ({ isMobile }) => {
 				<LeftRow text={false}>
 					<ImgContainer>
 						<Img src={AmmoTank} alt='ammo-tank' />
-						{!isMobile && (
+						{/* {!isMobile && (
 							<VideoContainer>
 								<video muted controls autoPlay loop>
 									<source
@@ -377,7 +377,7 @@ const AdvancedProjects = ({ isMobile }) => {
 									/>
 								</video>
 							</VideoContainer>
-						)}
+						)} */}
 					</ImgContainer>
 				</LeftRow>
 				<RightRow text={true}>

@@ -23,7 +23,20 @@ const Container = styled(motion.section)`
 		padding-right: 10px;
 		min-height: 40vh;
 		max-width: 100vw;
-		padding-top: 130px;
+		padding-top: 155px;
+		padding-bottom: 100px;
+	}
+	@media only screen and (max-width: 350px) {
+		padding-left: 10px;
+		padding-right: 10px;
+		min-height: 40vh;
+		max-width: 100vw;
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+	@media only screen and (max-height: 900px) and (min-height: 800px) {
+		padding-top: 180px;
+		padding-bottom: 150px;
 	}
 `;
 
@@ -65,6 +78,10 @@ const Title = styled(motion.h1)`
 		font-size: 40px;
 		width: 100%;
 	}
+	@media only screen and (max-width: 350px) {
+		font-size: 36px;
+		width: 100%;
+	}
 `;
 
 const FirstTitle = styled(Title)`
@@ -75,6 +92,10 @@ const FirstTitle = styled(Title)`
 	font-family: 'Asap', sans-serif;
 	@media only screen and (max-width: 450px) {
 		font-size: 18px;
+		width: 100%;
+	}
+	@media only screen and (max-width: 350px) {
+		font-size: 15px;
 		width: 100%;
 	}
 `;
@@ -90,6 +111,10 @@ const SubTitle = styled(Title)`
 	}
 	@media only screen and (max-width: 450px) {
 		font-size: 23px;
+		width: 100%;
+	}
+	@media only screen and (max-width: 350px) {
+		font-size: 20px;
 		width: 100%;
 	}
 `;
@@ -110,6 +135,11 @@ const Description = styled(Title)`
 		width: 100%;
 		line-height: 32px;
 		font-size: 16px;
+	}
+	@media only screen and (max-width: 430px) {
+		width: 100%;
+		line-height: 32px;
+		font-size: 13px;
 	}
 `;
 

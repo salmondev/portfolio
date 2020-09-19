@@ -88,6 +88,9 @@ const BodyList = styled(motion.ul)`
 	@media only screen and (max-width: 400px) {
 		font-size: 14px;
 	}
+	@media only screen and (max-width: 350px) {
+		font-size: 13px;
+	}
 `;
 
 const Experience = ({ expRef }) => {

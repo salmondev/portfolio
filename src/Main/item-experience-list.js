@@ -27,6 +27,9 @@ const Item = styled(motion.li)`
 	@media only screen and (max-width: 450px) {
 		line-height: 37px;
 	}
+	@media only screen and (max-width: 350px) {
+		margin-right: 5px;
+	}
 `;
 
 const BackgroundTitle = styled(motion.div)`
