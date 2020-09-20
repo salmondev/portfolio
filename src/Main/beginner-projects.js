@@ -199,7 +199,10 @@ const BeginnerProjects = () => {
 					</ImgContainer>
 					<TextContainer>
 						<Title>BurgerApp</Title>
-						<Explanation>A web about posting your favorite games.</Explanation>
+						<Explanation>
+							My first project in Reactjs from an online bootcamp. It is a web where you can make your own
+							burguer and purchase it.
+						</Explanation>
 						<Technology>
 							<TechItems>
 								<Hastag>#</Hastag>React
@@ -289,7 +292,7 @@ const BeginnerProjects = () => {
 					</ImgContainer>
 					<TextContainer>
 						<Title>Weather</Title>
-						<Explanation>A web about city weather</Explanation>
+						<Explanation>A web about the weather in differents cities</Explanation>
 						<Technology>
 							<TechItems>
 								<Hastag>#</Hastag>React
