@@ -8,6 +8,7 @@ import NinjaSimulation from '../assets/ninja-simulation.png';
 import AmmoTank from '../assets/ammo-tank.png';
 import { Github } from '@styled-icons/boxicons-logos';
 import { ExternalLinkOutline } from '@styled-icons/evaicons-outline';
+import AmmoTankVideo from '../assets/tank-ammo.mov';
 
 const Container = styled(motion.div)`
 	padding-top: 2em;
@@ -368,16 +369,13 @@ const AdvancedProjects = ({ isMobile }) => {
 				<LeftRow text={false}>
 					<ImgContainer>
 						<Img src={AmmoTank} alt='ammo-tank' />
-						{/* {!isMobile && (
+						{!isMobile && (
 							<VideoContainer>
 								<video muted controls autoPlay loop>
-									<source
-										src='https://bender-portfolio.s3.amazonaws.com/Grabacio%CC%81n+de+pantalla+2020-09-14+a+las+21.23.43.mov'
-										type='video/mp4'
-									/>
+									<source src={AmmoTankVideo} type='video/mp4' />
 								</video>
 							</VideoContainer>
-						)} */}
+						)}
 					</ImgContainer>
 				</LeftRow>
 				<RightRow text={true}>
